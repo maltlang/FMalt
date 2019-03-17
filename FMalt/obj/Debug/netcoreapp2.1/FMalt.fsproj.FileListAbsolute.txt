@@ -1,0 +1,10 @@
+C:\Users\lyzh\source\repos\FMalt\FMalt\bin\Debug\netcoreapp2.1\FMalt.deps.json
+C:\Users\lyzh\source\repos\FMalt\FMalt\bin\Debug\netcoreapp2.1\FMalt.runtimeconfig.json
+C:\Users\lyzh\source\repos\FMalt\FMalt\bin\Debug\netcoreapp2.1\FMalt.runtimeconfig.dev.json
+C:\Users\lyzh\source\repos\FMalt\FMalt\bin\Debug\netcoreapp2.1\FMalt.dll
+C:\Users\lyzh\source\repos\FMalt\FMalt\bin\Debug\netcoreapp2.1\FMalt.pdb
+C:\Users\lyzh\source\repos\FMalt\FMalt\obj\Debug\netcoreapp2.1\FMalt.AssemblyInfoInputs.cache
+C:\Users\lyzh\source\repos\FMalt\FMalt\obj\Debug\netcoreapp2.1\FMalt.AssemblyInfo.fs
+C:\Users\lyzh\source\repos\FMalt\FMalt\obj\Debug\netcoreapp2.1\FMalt.dll
+C:\Users\lyzh\source\repos\FMalt\FMalt\obj\Debug\netcoreapp2.1\FMalt.pdb
+C:\Users\lyzh\source\repos\FMalt\FMalt\obj\Debug\netcoreapp2.1\FMalt.fsprojAssemblyReference.cache

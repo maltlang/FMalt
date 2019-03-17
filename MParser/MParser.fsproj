@@ -5,8 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="Grammar.bnf" />
     <Compile Include="Library.fs" />
   </ItemGroup>
+
+  <ItemGroup />
 
   <ItemGroup>
     <ProjectReference Include="..\LParserC\LParserC\LParserC.fsproj" />

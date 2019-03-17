@@ -1,0 +1,11 @@
+C:\Users\lyzh\source\repos\FMalt\MParser\bin\Debug\netcoreapp2.1\MParser.deps.json
+C:\Users\lyzh\source\repos\FMalt\MParser\bin\Debug\netcoreapp2.1\MParser.dll
+C:\Users\lyzh\source\repos\FMalt\MParser\bin\Debug\netcoreapp2.1\MParser.pdb
+C:\Users\lyzh\source\repos\FMalt\MParser\bin\Debug\netcoreapp2.1\LParserC.dll
+C:\Users\lyzh\source\repos\FMalt\MParser\bin\Debug\netcoreapp2.1\LParserC.pdb
+C:\Users\lyzh\source\repos\FMalt\MParser\obj\Debug\netcoreapp2.1\MParser.fsprojAssemblyReference.cache
+C:\Users\lyzh\source\repos\FMalt\MParser\obj\Debug\netcoreapp2.1\MParser.AssemblyInfoInputs.cache
+C:\Users\lyzh\source\repos\FMalt\MParser\obj\Debug\netcoreapp2.1\MParser.AssemblyInfo.fs
+C:\Users\lyzh\source\repos\FMalt\MParser\obj\Debug\netcoreapp2.1\MParser.fsproj.CopyComplete
+C:\Users\lyzh\source\repos\FMalt\MParser\obj\Debug\netcoreapp2.1\MParser.dll
+C:\Users\lyzh\source\repos\FMalt\MParser\obj\Debug\netcoreapp2.1\MParser.pdb

@@ -23,30 +23,31 @@ module LParserC =
 
     exception OutOfRange
 
-    let inline getNext (self: StrStream) =
+    let inline slice (self: StrStream) = 
         if self.size = self.valu.Length
         then raise OutOfRange
-        else
-            if getHead self = '\n'
-            then {
-                size    = self.size + 1;
-                valu    = self.valu;
-                line    = self.line + 1;
-                col     = 1}
-            else {
-                size    = self.size + 1;
-                valu    = self.valu;
-                line    = self.line;
-                col     = self.col + 1}
-
-    let inline slice (self: StrStream) = (getHead self, getNext self)
+        else (getHead self, 
+                if getHead self = '\n'
+                then {
+                    size = self.size + 1;
+                    valu = self.valu;
+                    line = self.line + 1;
+                    col = 1}
+                else {
+                    size = self.size + 1;
+                    valu = self.valu;
+                    line = self.line;
+                    col = self.col + 1;
+                })
 
     let inline highSlice s1 s2 =
         assert (s1.size < s2.size)
         let rec recSlice s1 s2 =
             if s1.size = s2.size
             then ""
-            else string (getHead s1) + recSlice (getNext s1) s2
+            else
+                let (f, l) = slice s1
+                string f + recSlice l s2
         recSlice s1 s2
 
     // ParserC and ToolFunctions
@@ -106,7 +107,7 @@ module LParserC =
 
     let emptyParser = charParser ' ' * charParser '\n' * charParser '\t' * charParser '\r'
 
-    let inline parseSegm s =
+    let parseSegm =
         charParser '(' *
         charParser ')' *
         charParser '[' *
@@ -126,46 +127,30 @@ module LParserC =
 
     let numberParser = boxSay numberParserR
 
-    let inline numbersParser s = (rpt numberParser) s
+    let numbersParser = rpt numberParser
 
     let anyChar =
         boxSay ( fun s ->
             let (_, t) = slice s
             Some t)
 
-    let inline ConChar s =
-        s |> (charParser '\\' + anyChar) * anyChar
+    let ConChar = (charParser '\\' + anyChar) * anyChar
 
     // Export
 
-    let inline parseUint s =
-        s
-        |> numberParser
-        |> numbersParser
+    let parseBool = stringParser "false" * stringParser "true"
 
-    let inline parseInt s =
-        s
-        |> (charParser '+' * charParser '-')
-        |> parseUint
+    let parseUint = numberParser + numbersParser
 
-    let inline parseFloat s =
-        s |>
-        (parseInt * parseUint) + charParser '.' + parseUint
+    let parseInt = (charParser '+' * charParser '-') + parseUint
 
-    let inline parseRational s =
-        s |>
-        (parseInt * parseUint) |> charParser '/' |> (parseInt * parseUint)
+    let parseFloat = (parseInt * parseUint) + charParser '.' + parseUint
 
-    let inline parseChar s =
-        s 
-        |> charParser '\''
-        |> ConChar
-        |> charParser '\''
+    let parseRational = (parseInt * parseUint) + charParser '/' + (parseInt * parseUint)
 
-    let inline parseString s =
-        s 
-        |> charParser '\"'
-        |> rpt (charParser '\"' * ConChar)
+    let parseChar = charParser '\'' + ConChar + charParser '\''
+
+    let parseString = charParser '\"' + rpt (charParser '\"' * ConChar)
         
 // please use automatic curry
 // demo: (charParser 'a') s

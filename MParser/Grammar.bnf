@@ -1,0 +1,16 @@
+﻿
+Grammar ::= Expr ;
+
+Expr ::= Xd | Quote | Eval | List | Atom ;
+
+Xd ::= '#' * '\n' ;
+
+Quote ::= '&' Expr ;
+
+Eval ::= '*' Expr ;
+
+List ::= '(' Expr ')' | '[' Expr ']' ;
+
+Atom ::= Bool | char | string | uint | int | float | symbol ;
+
+Bool ::= "true" | "false" ;
