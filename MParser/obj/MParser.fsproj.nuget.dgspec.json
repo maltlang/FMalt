@@ -1,0 +1,114 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\lyzh\\source\\repos\\FMalt\\MParser\\MParser.fsproj": {}
+  },
+  "projects": {
+    "C:\\Users\\lyzh\\source\\repos\\FMalt\\LParserC\\LParserC\\LParserC.fsproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\lyzh\\source\\repos\\FMalt\\LParserC\\LParserC\\LParserC.fsproj",
+        "projectName": "LParserC",
+        "projectPath": "C:\\Users\\lyzh\\source\\repos\\FMalt\\LParserC\\LParserC\\LParserC.fsproj",
+        "packagesPath": "C:\\Users\\lyzh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lyzh\\source\\repos\\FMalt\\LParserC\\LParserC\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\lyzh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "FSharp.Core": {
+              "target": "Package",
+              "version": "[4.6.2, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\lyzh\\source\\repos\\FMalt\\MParser\\MParser.fsproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\lyzh\\source\\repos\\FMalt\\MParser\\MParser.fsproj",
+        "projectName": "MParser",
+        "projectPath": "C:\\Users\\lyzh\\source\\repos\\FMalt\\MParser\\MParser.fsproj",
+        "packagesPath": "C:\\Users\\lyzh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lyzh\\source\\repos\\FMalt\\MParser\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\lyzh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "C:\\Users\\lyzh\\source\\repos\\FMalt\\LParserC\\LParserC\\LParserC.fsproj": {
+                "projectPath": "C:\\Users\\lyzh\\source\\repos\\FMalt\\LParserC\\LParserC\\LParserC.fsproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "FSharp.Core": {
+              "target": "Package",
+              "version": "[4.6.2, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
