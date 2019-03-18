@@ -60,7 +60,7 @@ type TestClass () =
 
     [<TestMethod>]
     member this.TestXdParser () =
-        let (v, s) = (MXdParser (Some (createStrStream "#ŶŶŶ\n90#ŶŶŶ\n90"))).Value;
+        let (v, s) = (MXdParser (Some (createStrStream "#ŶŶŶ\n()"))).Value;
         match v.valu with
         | Nil -> 
             printfn "pos: %A" s.pos

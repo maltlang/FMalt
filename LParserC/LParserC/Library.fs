@@ -90,7 +90,7 @@ module LParserC =
                 | :? OutOfRange -> v
         rf
 
-    let highrpt (f1: Parserc) (f2: Parserc) =
+    let highrpt f1 f2 =
         let rec rf (v: StrStream option) =
             try
                 match f1 v with
