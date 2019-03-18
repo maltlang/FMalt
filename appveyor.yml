@@ -5,4 +5,4 @@ platform: Any CPU
 build:
   parallel: true
   verbosity: minimal
-  project: MParser.Test
+  project: FMalt.sln
