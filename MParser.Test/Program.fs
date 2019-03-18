@@ -3,5 +3,5 @@ module Program =
 
     let [<EntryPoint>] debug _ =
         let t = TestClass ()
-        t.TestUIntParser ()
+        t.TestCharParser ()
         0

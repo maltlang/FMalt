@@ -1,44 +1,54 @@
 namespace LParserC
 
 module LParserC =
+    open System
 
     // StrStream and operation functions
+
+    type Pos = {
+        line:   int;
+        col:    int;
+    }
 
     [<Struct>]
     type StrStream = {
         valu:   string;
         size:   int;
-        line:   int;
-        col:    int;
+        pos: Pos
     }
 
     let inline createStrStream (s: string) = {
             valu    = s;
             size    = 0;
-            line    = 1;
-            col     = 1
+            pos = {
+                col = 1;
+                line= 1;
+            }
         }
 
     let inline getHead (self: StrStream) = self.valu.Chars self.size
 
-    exception OutOfRange
+    type OutOfRange(pos: Pos) = inherit ApplicationException()
 
     let inline slice (self: StrStream) = 
         if self.size = self.valu.Length
-        then raise OutOfRange
+        then raise (OutOfRange self.pos)
         else (getHead self, 
                 if getHead self = '\n'
                 then {
-                    size = self.size + 1;
-                    valu = self.valu;
-                    line = self.line + 1;
-                    col = 1}
+                    size    = self.size + 1;
+                    valu    = self.valu;
+                    pos     = {
+                        line    = self.pos.line + 1;
+                        col     = 1
+                    }}
                 else {
-                    size = self.size + 1;
-                    valu = self.valu;
-                    line = self.line;
-                    col = self.col + 1;
-                })
+                    size    = self.size + 1;
+                    valu    = self.valu;
+                    pos     = {
+                        line    = self.pos.line;
+                        col     = self.pos.col + 1
+                    }})
 
     let inline highSlice s1 s2 =
         assert (s1.size < s2.size)
