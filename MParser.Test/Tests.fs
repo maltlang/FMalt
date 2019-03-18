@@ -14,10 +14,19 @@ type TestClass () =
         match v.valu with
         | Bool x -> Assert.IsTrue(x);
         | _ -> ()
-
+    
     [<TestMethod>]
     member this.TestUIntParser () =
         let (v, s) = (MUIntParser (Some (createStrStream "123"))).Value;
+        match v.valu with
+        | Uint x -> 
+            printfn "%i" x
+            Assert.AreNotEqual(123, x);
+        | _ -> ()
+
+    [<TestMethod>]
+    member this.TestIntParser () =
+        let (v, s) = (MIntParser (Some (createStrStream "+123"))).Value;
         match v.valu with
         | Uint x -> 
             printfn "%i" x

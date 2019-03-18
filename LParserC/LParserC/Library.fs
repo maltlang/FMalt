@@ -107,6 +107,8 @@ module LParserC =
 
     let emptyParser = charParser ' ' * charParser '\n' * charParser '\t' * charParser '\r'
 
+    let emptysParser = rpt emptyParser
+
     let parseSegm =
         charParser '(' *
         charParser ')' *
@@ -116,6 +118,8 @@ module LParserC =
         charParser '>' *
         charParser ',' *
         charParser '.' *
+        charParser '&' *
+        charParser '*' *
         emptyParser
 
 
@@ -137,6 +141,17 @@ module LParserC =
     let ConChar = (charParser '\\' + anyChar) * anyChar
 
     // Export
+
+    let appendl f =
+        function
+        | Some x -> 
+            try
+                match f (Some x) with
+                | Some y -> Some x
+                | _ -> None
+            with
+            | :? OutOfRange -> Some x
+        | _ -> None
 
     let parseBool = stringParser "false" * stringParser "true"
 
