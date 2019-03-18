@@ -100,7 +100,7 @@ module LParserC =
                     | Some x -> rf (Some x)
                     | _ -> None
             with
-                | :? OutOfRange -> v
+                | :? OutOfRange -> None
         rf
 
     // Expand

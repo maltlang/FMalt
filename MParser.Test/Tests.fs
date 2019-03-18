@@ -30,7 +30,7 @@ type TestClass () =
 
     [<TestMethod>]
     member this.TestIntParser () =
-        let (v, s) = (MIntParser (Some (createStrStream "+123"))).Value;
+        let (v, s) = (MIntParser (Some (createStrStream "-123"))).Value;
         match v.valu with
         | Uint x -> 
             printfn "pos: %A" s.pos
@@ -66,3 +66,13 @@ type TestClass () =
             printfn "pos: %A" s.pos
             //Assert.AreNotEqual(, x);
         | _ -> ()
+    
+    [<TestMethod>]
+    member this.TestListParser () =
+        let (v, s) = (MListParser (Some (createStrStream "(1 -2 true \"ooo\" () \"str\" )"))).Value;
+        match v.valu with
+        | List x -> 
+            printfn "pos: %A" s.pos
+            printfn "%A" x
+            //Assert.AreNotEqual(, x);
+        | _ -> failwith "Éµ±Æ£¬Õ¨ÁË°É£¬¹þ¹þ¹þ¹þ¹þ¹þ¹þ"

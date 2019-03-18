@@ -9,9 +9,12 @@ Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "LParserC", "LParserC\LParse
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "FMalt", "FMalt\FMalt.fsproj", "{CFDBF66B-E6E6-4DCA-A597-F54FB2E9F783}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MParser.Test", "MParser.Test\MParser.Test.fsproj", "{0E664F31-41C3-4A8B-B498-412431531BCB}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "MParser.Test", "MParser.Test\MParser.Test.fsproj", "{0E664F31-41C3-4A8B-B498-412431531BCB}"
 EndProject
 Global
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU

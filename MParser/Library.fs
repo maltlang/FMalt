@@ -33,7 +33,7 @@ module MParser =
                         pos     = {
                             line= s.pos.line;
                             col = s.pos.col
-                        }}, (emptysParser (Some x)).Value)
+                        }}, x)
             | _ -> None
         | _ -> None
 
@@ -72,6 +72,7 @@ module MParser =
 
     let rec MExprParser s =
         s |>
+        emptysParser |>
         MXdParser *
         MQuoteParser *
         MEvalParser *
@@ -87,7 +88,7 @@ module MParser =
         | _ -> None
 
     and MQuoteParser s = 
-        match s |> (charParser '&') with
+        match s |> emptysParser |> (charParser '&') with
         | Some t ->
             match Some t |> MExprParser with
             | Some (v, t) -> Some ({
@@ -98,7 +99,7 @@ module MParser =
         | _ -> None
 
     and MEvalParser s = 
-        match s |> (charParser '*') with
+        match s |> emptysParser |> (charParser '*') with
         | Some t ->
             match Some t |> MExprParser with
             | Some (v, t) -> Some ({
@@ -110,16 +111,16 @@ module MParser =
 
     and MListParser s =
         let rec rf s =
-            match s |> charParser ')' with
+            match s |> emptysParser |> charParser ')' with
             | Some x -> Some ([], x)
             | _ ->
-                match MEvalParser s with
+                match MExprParser s with
                 | Some (v, t) ->
-                    match rf s with
-                    | Some (v2, t) -> Some ((List.append [v] v2), t)
+                    match rf (Some t) with
+                    | Some (v2, t) -> Some (v::v2, t)
                     | _ -> None
                 | _ -> None
-        match s |> (charParser '(') |> rf with
+        match s |> emptysParser |> (charParser '(') |> rf with
         | Some (v, t) -> Some ({
             pos= s.Value.pos;
             valu= List v}
