@@ -3,7 +3,7 @@ namespace MParser
 module MParser =
     open System
     open LParserC.LParserC
-    open System.Collections
+    open LParserC.LParserC
 
     type RValue =
         | Nil
@@ -11,6 +11,7 @@ module MParser =
         | Char      of char
         | Uint      of uint64
         | Int       of int64
+        | Float     of float
         | String    of string
         | Symbol    of string
         | Tuple     of MataTree array
@@ -32,10 +33,9 @@ module MParser =
                         pos     = {
                             line= s.pos.line;
                             col = s.pos.col
-                        }}
-                , emptysParser (Some x))
-            | None -> None
-        | None -> None
+                        }}, (emptysParser (Some x)).Value)
+            | _ -> None
+        | _ -> None
 
     type InvalidEscapeChar(pos: Pos) = inherit ApplicationException()
 
@@ -44,12 +44,23 @@ module MParser =
         then
             match s.Chars 2 with
             | '\\' -> '\\'
-            | 'f' -> '\f'
+            | '\'' -> '\''
+            | '\"' -> '\"'
             | 'n' -> '\n'
             | 't' -> '\t'
             | 'r' -> '\r'
+            | 'f' -> '\f'
+            | 'b' -> '\b'
             | _ -> raise (InvalidEscapeChar pos)
         else s.Chars 1
+
+    let MXdParser x =
+        match x |> charParser '#' + highrpt (charNotParser '\n') anyChar with
+        | Some y -> Some ({
+            pos = x.Value.pos;
+            valu= Nil}
+            , y)
+        | _ -> None
 
     let MCharParser =
         function
@@ -59,6 +70,15 @@ module MParser =
     let MBoolParser   x = x |> ParserAnyAtom parseBool   Bool    Convert.ToBoolean
     let MUIntParser   x = x |> ParserAnyAtom parseUint   Uint    Convert.ToUInt64 
     let MIntParser    x = x |> ParserAnyAtom parseInt    Int     Convert.ToInt64  
-    let MStringParser x = x |> ParserAnyAtom parseString String  Convert.ToString 
+    let MFloatParser  x = x |> ParserAnyAtom parseFloat  Float   Convert.ToDouble
+    let MStringParser x = x |> ParserAnyAtom parseString String  Convert.ToString
+
+    let MAtomParser =
+        MBoolParser *
+        MCharParser *
+        MStringParser *
+        MUIntParser *
+        MIntParser *
+        MFloatParser
 
     

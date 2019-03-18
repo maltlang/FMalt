@@ -4,4 +4,6 @@ module Program =
     let [<EntryPoint>] debug _ =
         let t = TestClass ()
         t.TestCharParser ()
+        t.TestStringParser ()
+        t.TestXdParser ()
         0

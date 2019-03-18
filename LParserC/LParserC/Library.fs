@@ -90,6 +90,19 @@ module LParserC =
                 | :? OutOfRange -> v
         rf
 
+    let highrpt (f1: Parserc) (f2: Parserc) =
+        let rec rf (v: StrStream option) =
+            try
+                match f1 v with
+                | Some x -> Some x
+                | _ ->
+                    match f2 v with
+                    | Some x -> rf (Some x)
+                    | _ -> None
+            with
+                | :? OutOfRange -> v
+        rf
+
     // Expand
 
     let charParser v = 
@@ -175,7 +188,7 @@ module LParserC =
 
     let parseChar = charParser '\'' + ConChar + charParser '\''
 
-    let parseString = charParser '\"' + rpt (charParser '\"' * ConChar)
+    let parseString = charParser '\"' + highrpt (charParser '\"') ConChar
         
 // please use automatic curry
 // demo: (charParser 'a') s
