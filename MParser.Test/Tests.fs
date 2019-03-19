@@ -25,17 +25,17 @@ type TestClass () =
         | Uint x -> 
             printfn "pos: %A" s.pos
             printfn "%A" x
-            Assert.AreNotEqual(123, x);
+            Assert.AreEqual(uint64 123, x);
         | _ -> ()
 
     [<TestMethod>]
     member this.TestIntParser () =
         let (v, s) = (MIntParser (Some (createStrStream "-123"))).Value;
         match v.valu with
-        | Uint x -> 
+        | Int x -> 
             printfn "pos: %A" s.pos
             printfn "%A" x
-            Assert.AreNotEqual(123, x);
+            Assert.AreEqual(int64 -123, x);
         | _ -> ()
 
     [<TestMethod>]
@@ -45,7 +45,7 @@ type TestClass () =
         | Char x -> 
             printfn "pos: %A" s.pos
             printfn "%A" x
-            Assert.AreNotEqual("t", x);
+            Assert.AreEqual('\n', x);
         | _ -> ()
 
     [<TestMethod>]
@@ -55,7 +55,18 @@ type TestClass () =
         | String x -> 
             printfn "pos: %A" s.pos
             printfn "%A" x
-            Assert.AreNotEqual("\\ssr", x);
+            Assert.AreEqual("\"\\ssr\"", x);
+        | _ -> ()
+
+    [<TestMethod>]
+    member this.TestSymbolParser () =
+        let (v, s) = (MSymbolParser (Some (createStrStream "Ss90t ()"))).Value;
+        match v.valu with
+        | Symbol x -> 
+            printfn "pos: %A" s.pos
+            printfn "%A" x
+            printfn "%A" s
+            Assert.AreEqual("Ss90t", x);
         | _ -> ()
 
     [<TestMethod>]
@@ -69,9 +80,9 @@ type TestClass () =
     
     [<TestMethod>]
     member this.TestListParser () =
-        let (v, s) = (MListParser (Some (createStrStream "(1 -2 true \"ooo\" () \"str\" )"))).Value;
+        let (v, s) = (MListParser (Some (createStrStream "(1 -2 true \"ooo\" -1.2 () str)"))).Value;
         match v.valu with
-        | List x -> 
+        | List x ->
             printfn "pos: %A" s.pos
             printfn "%A" x
             //Assert.AreNotEqual(, x);

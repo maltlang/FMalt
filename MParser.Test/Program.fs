@@ -4,4 +4,5 @@ module Program =
     let [<EntryPoint>] debug _ =
         let t = TestClass ()
         t.TestListParser ()
+        //t.TestListParser ()
         0

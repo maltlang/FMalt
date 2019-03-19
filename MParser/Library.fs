@@ -27,7 +27,7 @@ module MParser =
     let inline ParserAnyAtom (f1: Parserc) f2 f3 =
         function
         | Some s ->
-            match emptysParser (Some s) |> f1 |> (appendl parseSegm) with
+            match Some s |> f1 |> (appendl parseSegm) with
             | Some x -> Some ({
                         valu    = f2 ((highSlice s x) |> f3)
                         pos     = {
@@ -56,7 +56,7 @@ module MParser =
 
     // parser
 
-    let parseSymbol s = s |> highrpt parseSegm anyChar
+    let parseSymbol s = s |> (highrpt parseSegm anyChar)
 
     let MCharParser =
         function
@@ -71,16 +71,15 @@ module MParser =
     let MSymbolParser x = x |> ParserAnyAtom parseSymbol    Symbol  (fun s -> String.Intern (Convert.ToString (s)))
 
     let rec MExprParser s =
-        s |>
-        emptysParser |>
-        MXdParser *
-        MQuoteParser *
-        MEvalParser *
-        MListParser *
-        MAtomParser
+        s |> emptysParser |>
+            MXdParser *
+            MQuoteParser *
+            MEvalParser *
+            MListParser *
+            MAtomParser 
 
     and MXdParser x =
-        match x |> charParser '#' + highrpt (charParser '\n') anyChar with
+        match x |> charParser '#' + (highrpt (charParser '\n') anyChar) + next with
         | Some y -> Some ({
             pos = x.Value.pos;
             valu= Nil}
@@ -88,7 +87,7 @@ module MParser =
         | _ -> None
 
     and MQuoteParser s = 
-        match s |> emptysParser |> (charParser '&') with
+        match s |> (charParser '&') with
         | Some t ->
             match Some t |> MExprParser with
             | Some (v, t) -> Some ({
@@ -99,7 +98,7 @@ module MParser =
         | _ -> None
 
     and MEvalParser s = 
-        match s |> emptysParser |> (charParser '*') with
+        match s |> (charParser '*') with
         | Some t ->
             match Some t |> MExprParser with
             | Some (v, t) -> Some ({
@@ -111,7 +110,7 @@ module MParser =
 
     and MListParser s =
         let rec rf s =
-            match s |> emptysParser |> charParser ')' with
+            match s |> charParser ')' with
             | Some x -> Some ([], x)
             | _ ->
                 match MExprParser s with
@@ -128,12 +127,12 @@ module MParser =
         | _ -> None 
 
     and MAtomParser =
-        MBoolParser *
         MCharParser *
         MStringParser *
-        MUIntParser *
-        MIntParser *
         MFloatParser *
+        MIntParser *
+        MUIntParser *
+        MBoolParser *
         MSymbolParser
 
     // MaltRawParser

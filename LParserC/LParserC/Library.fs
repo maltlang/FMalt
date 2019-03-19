@@ -94,7 +94,7 @@ module LParserC =
         let rec rf (v: StrStream option) =
             try
                 match f1 v with
-                | Some x -> Some x
+                | Some _ -> v
                 | _ ->
                     match f2 v with
                     | Some x -> rf (Some x)
@@ -102,6 +102,13 @@ module LParserC =
             with
                 | :? OutOfRange -> None
         rf
+    
+    let next = function
+    | Some x ->
+        let (_, r) = slice x
+        Some r
+    | None -> None
+
 
     // Expand
 
@@ -170,7 +177,7 @@ module LParserC =
         | Some x -> 
             try
                 match f (Some x) with
-                | Some y -> Some x
+                | Some _ -> Some x
                 | _ -> None
             with
             | :? OutOfRange -> Some x
@@ -188,7 +195,7 @@ module LParserC =
 
     let parseChar = charParser '\'' + ConChar + charParser '\''
 
-    let parseString = charParser '\"' + highrpt (charParser '\"') ConChar
+    let parseString = charParser '\"' + (highrpt (charParser '\"') ConChar) + next
         
 // please use automatic curry
 // demo: (charParser 'a') s
