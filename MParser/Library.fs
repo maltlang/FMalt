@@ -2,10 +2,14 @@ namespace MParser
 
 module MParser =
     open System
-    open System.Collections
     open LParserC.LParserC
 
-    type RValue =
+    type MataTree = {
+        valu:   RValue
+        pos:    Pos
+    }
+
+    and RValue =
         | Nil
         | Bool      of bool
         | Char      of char
@@ -16,11 +20,6 @@ module MParser =
         | Symbol    of string
         | Tuple     of MataTree array
         | List      of MataTree list
-
-    and MataTree = {
-        valu:   RValue
-        pos:    Pos
-    }
 
     type MParser = StrStream option -> (MataTree * StrStream) option
         
@@ -72,14 +71,15 @@ module MParser =
 
     let rec MExprParser s =
         s |> emptysParser |>
-            MXdParser *
-            MQuoteParser *
-            MEvalParser *
-            MListParser *
-            MAtomParser 
+            (
+                MXdParser <*>
+                MQuoteParser <*>
+                MEvalParser <*>
+                MListParser <*>
+                MAtomParser)
 
     and MXdParser x =
-        match x |> charParser '#' + (highrpt (charParser '\n') anyChar) + next with
+        match x |> (charParser '#' >> (highrpt (charParser '\n') anyChar) >> next) with
         | Some y -> Some ({
             pos = x.Value.pos;
             valu= Nil}
@@ -127,12 +127,12 @@ module MParser =
         | _ -> None 
 
     and MAtomParser =
-        MCharParser *
-        MStringParser *
-        MFloatParser *
-        MIntParser *
-        MUIntParser *
-        MBoolParser *
+        MCharParser <*>
+        MStringParser <*>
+        MFloatParser <*>
+        MIntParser <*>
+        MUIntParser <*>
+        MBoolParser <*>
         MSymbolParser
 
     // MaltRawParser

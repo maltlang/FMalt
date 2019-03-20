@@ -4,6 +4,7 @@ open System
 open Microsoft.VisualStudio.TestTools.UnitTesting
 open MParser.MParser
 open LParserC.LParserC
+open System
 
 [<TestClass>]
 type TestClass () =
@@ -16,7 +17,7 @@ type TestClass () =
             printfn "pos: %A" s.pos
             printfn "%A" x
             Assert.IsTrue(x);
-        | _ -> ()
+        | _ -> failwith "Éµ±Æ£¬Õ¨ÁË°É£¬¹þ¹þ¹þ¹þ¹þ¹þ¹þ"
     
     [<TestMethod>]
     member this.TestUIntParser () =
@@ -26,7 +27,7 @@ type TestClass () =
             printfn "pos: %A" s.pos
             printfn "%A" x
             Assert.AreEqual(uint64 123, x);
-        | _ -> ()
+        | _ -> failwith "Éµ±Æ£¬Õ¨ÁË°É£¬¹þ¹þ¹þ¹þ¹þ¹þ¹þ"
 
     [<TestMethod>]
     member this.TestIntParser () =
@@ -36,7 +37,7 @@ type TestClass () =
             printfn "pos: %A" s.pos
             printfn "%A" x
             Assert.AreEqual(int64 -123, x);
-        | _ -> ()
+        | _ -> failwith "Éµ±Æ£¬Õ¨ÁË°É£¬¹þ¹þ¹þ¹þ¹þ¹þ¹þ"
 
     [<TestMethod>]
     member this.TestCharParser () =
@@ -46,7 +47,7 @@ type TestClass () =
             printfn "pos: %A" s.pos
             printfn "%A" x
             Assert.AreEqual('\n', x);
-        | _ -> ()
+        | _ -> failwith "Éµ±Æ£¬Õ¨ÁË°É£¬¹þ¹þ¹þ¹þ¹þ¹þ¹þ"
 
     [<TestMethod>]
     member this.TestStringParser () =
@@ -56,7 +57,7 @@ type TestClass () =
             printfn "pos: %A" s.pos
             printfn "%A" x
             Assert.AreEqual("\"\\ssr\"", x);
-        | _ -> ()
+        | _ -> failwith "Éµ±Æ£¬Õ¨ÁË°É£¬¹þ¹þ¹þ¹þ¹þ¹þ¹þ"
 
     [<TestMethod>]
     member this.TestSymbolParser () =
@@ -67,7 +68,7 @@ type TestClass () =
             printfn "%A" x
             printfn "%A" s
             Assert.AreEqual("Ss90t", x);
-        | _ -> ()
+        | _ -> failwith "Éµ±Æ£¬Õ¨ÁË°É£¬¹þ¹þ¹þ¹þ¹þ¹þ¹þ"
 
     [<TestMethod>]
     member this.TestXdParser () =
@@ -76,11 +77,21 @@ type TestClass () =
         | Nil -> 
             printfn "pos: %A" s.pos
             //Assert.AreNotEqual(, x);
-        | _ -> ()
+        | _ -> failwith "Éµ±Æ£¬Õ¨ÁË°É£¬¹þ¹þ¹þ¹þ¹þ¹þ¹þ"
     
     [<TestMethod>]
     member this.TestListParser () =
         let (v, s) = (MListParser (Some (createStrStream "(1 -2 true \"ooo\" -1.2 () str)"))).Value;
+        match v.valu with
+        | List x ->
+            printfn "pos: %A" s.pos
+            printfn "%A" x
+            //Assert.AreNotEqual(, x);
+        | _ -> failwith "Éµ±Æ£¬Õ¨ÁË°É£¬¹þ¹þ¹þ¹þ¹þ¹þ¹þ"
+    
+    [<TestMethod>]
+    member this.TestMaltParser () =
+        let (v, s) = (MaltParser (Some (createStrStream (Console.ReadLine ())))).Value;
         match v.valu with
         | List x ->
             printfn "pos: %A" s.pos

@@ -70,9 +70,9 @@ module LParserC =
         | Some s    -> f s
         | None      -> None
 
-    let inline (+) f1 f2 = f1 >> f2
+    let inline (<+>) f1 f2 = f1 >> f2
 
-    let inline (*) f1 f2 = 
+    let inline (<*>) f1 f2 = 
         function
         | Some x ->
             match f1 (Some x) with
@@ -135,21 +135,21 @@ module LParserC =
     let inline stringParser v =
         boxSay (fun s -> stringParserR (createStrStream v) s)
 
-    let emptyParser = charParser ' ' * charParser '\n' * charParser '\t' * charParser '\r'
+    let emptyParser = charParser ' ' <*> charParser '\n' <*> charParser '\t' <*> charParser '\r'
 
     let emptysParser = rpt emptyParser
 
     let parseSegm =
-        charParser '(' *
-        charParser ')' *
-        charParser '[' *
-        charParser ']' *
-        charParser '<' *
-        charParser '>' *
-        charParser ',' *
-        charParser '.' *
-        charParser '&' *
-        charParser '*' *
+        charParser '(' <*>
+        charParser ')' <*>
+        charParser '[' <*>
+        charParser ']' <*>
+        charParser '<' <*>
+        charParser '>' <*>
+        charParser ',' <*>
+        charParser '.' <*>
+        charParser '&' <*>
+        charParser '*' <*>
         emptyParser
 
 
@@ -168,7 +168,7 @@ module LParserC =
             let (_, t) = slice s
             Some t)
 
-    let ConChar = (charParser '\\' + anyChar) * anyChar
+    let ConChar = (charParser '\\' >> anyChar) <*> anyChar
 
     // Export
 
@@ -183,19 +183,19 @@ module LParserC =
             | :? OutOfRange -> Some x
         | _ -> None
 
-    let parseBool = stringParser "false" * stringParser "true"
+    let parseBool = stringParser "false" <*> stringParser "true"
 
-    let parseUint = numberParser + numbersParser
+    let parseUint = numberParser >> numbersParser
 
-    let parseInt = (charParser '+' * charParser '-') + parseUint
+    let parseInt = (charParser '+' <*> charParser '-') >> parseUint
 
-    let parseFloat = (parseInt * parseUint) + charParser '.' + parseUint
+    let parseFloat = (parseInt <*> parseUint) >> charParser '.' >> parseUint
 
-    let parseRational = (parseInt * parseUint) + charParser '/' + (parseInt * parseUint)
+    let parseRational = (parseInt <*> parseUint) >> charParser '/' >> (parseInt <*> parseUint)
 
-    let parseChar = charParser '\'' + ConChar + charParser '\''
+    let parseChar = charParser '\'' >> ConChar >> charParser '\''
 
-    let parseString = charParser '\"' + (highrpt (charParser '\"') ConChar) + next
+    let parseString = charParser '\"' >> (highrpt (charParser '\"') ConChar) >> next
         
 // please use automatic curry
 // demo: (charParser 'a') s
