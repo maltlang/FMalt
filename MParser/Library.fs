@@ -109,22 +109,30 @@ module MParser =
         | _ -> None
 
     and MListParser s =
-        let rec rf s =
-            match s |> charParser ')' with
+        // this is shit
+        let rec rf endf s =
+            match s |> endf with
             | Some x -> Some ([], x)
             | _ ->
                 match MExprParser s with
                 | Some (v, t) ->
-                    match rf (Some t) with
+                    match rf endf (Some t) with
                     | Some (v2, t) -> Some (v::v2, t)
                     | _ -> None
                 | _ -> None
-        match s |> emptysParser |> (charParser '(') |> rf with
+        match s |> emptysParser |> charParser '(' |> rf (charParser ')') with
         | Some (v, t) -> Some ({
             pos= s.Value.pos;
             valu= List v}
             , t)
-        | _ -> None 
+        | _ ->
+            match s |> emptysParser |> charParser '[' |> rf (charParser ']') with
+                | Some (v, t) -> Some ({
+                    pos= s.Value.pos;
+                    valu= List v}
+                    , t)
+                | _ -> None
+
 
     and MAtomParser =
         MCharParser <*>

@@ -196,7 +196,3 @@ module LParserC =
     let parseChar = charParser '\'' >> ConChar >> charParser '\''
 
     let parseString = charParser '\"' >> (highrpt (charParser '\"') ConChar) >> next
-        
-// please use automatic curry
-// demo: (charParser 'a') s
-// demo: (boxSay parserFunc) s

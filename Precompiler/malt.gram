@@ -1,0 +1,23 @@
+﻿
+Grammar :=
+(module <module-name>
+    <def>*)
+    |
+<def>*
+
+module-name := symbol
+
+def :=
+(fun <function-name> <pattern>
+    <body>*)
+    |
+(macro <macro-name> <pattern>
+    <body>*)
+
+let :=
+(let <pattern> <expr>
+    <body>*)
+    |
+    let :=
+(use <pattern> <expr>
+    <body>*)
