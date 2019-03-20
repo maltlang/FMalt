@@ -7,5 +7,8 @@ module Precompiler =
         a: int
     }
 
+    let pureEval (context: CompilerContext) (args: MataTree) =
+        0
+
     let prec (context: CompilerContext) (args: MataTree) =
-        printfn "Hello %s" ""
+        0

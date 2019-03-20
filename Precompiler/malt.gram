@@ -1,18 +1,24 @@
-﻿
-Grammar :=
-(module <module-name>
-    <def>*)
-    |
-<def>*
+﻿Grammar := load | def | macro | let | macro-call
 
-module-name := symbol
+load := st-load | dy-load
+
+st-load := (static-load <module-name>)
+
+dy-load := (dynamic-load <module-name>)
+
+body := let | cond | match | lambda | dy-load | macro-call | fun-call
 
 def :=
 (fun <function-name> <pattern>
     <body>*)
-    |
+
+macro := 
 (macro <macro-name> <pattern>
     <body>*)
+
+lambda := (<lam> <pattern> <body>*)
+
+lam := '\' | "lambda"
 
 let :=
 (let <pattern> <expr>
@@ -21,3 +27,17 @@ let :=
     let :=
 (use <pattern> <expr>
     <body>*)
+
+cond :=
+(cond [<expr> <body>*]*)
+
+match :=
+(match <expr> [<pattern> <body>*]*)
+
+macro-call :=
+(<macro-name> <expr>*)
+
+fun-call :=
+(<expr> <expr>*)
+
+pattern := _ | (<pattern> . <pattern>) | <expr>
