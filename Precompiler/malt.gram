@@ -1,4 +1,4 @@
-﻿Grammar := load | def | macro | let | macro-call
+﻿Grammar := load | def | macro | let | use | macro-call
 
 load := st-load | dy-load
 
@@ -6,7 +6,7 @@ st-load := (static-load <module-name>)
 
 dy-load := (dynamic-load <module-name>)
 
-body := let | cond | match | lambda | dy-load | macro-call | fun-call
+body := let | use | cond | match | lambda | dy-load | macro-call | fun-call
 
 def :=
 (fun <function-name> <pattern>
@@ -23,9 +23,8 @@ lam := '\' | "lambda"
 let :=
 (let <pattern> <expr>
     <body>*)
-    |
-    let :=
-(use <pattern> <expr>
+use :=
+(use [<value-name> <value-name:close-function>] <expr>
     <body>*)
 
 cond :=
