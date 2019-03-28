@@ -39,13 +39,29 @@ module Precompiler =
     }
     *)
 
+    type typeLabal =
+    | Any
+    | Nil
+    | Int
+    | UInt
+    | Float
+    | Bool
+    | Char
+    | List of typeLabal
+    | Tuple of typeLabal list
+    | Struct of string
+    | Function of functionTypeLabal
+
+    and functionTypeLabal = (typeLabal list * typeLabal)
+
     type TopAst =
-    | StLoad of string
-    | DyLoad of string
-    | Export of string[]
+    | Nil
+    | Import of string list
+    | Load of string list
+    | Export of string list
     | Defun of FunctionConst
     | DefMacro of MacroConst
-    | TypeLabel of (string * RValue)
+    | TypeLabel of functionTypeLabal
     //| MacroCall of MacroCall
 
     type RootNode = {
@@ -63,14 +79,26 @@ module Precompiler =
         0
     *)
 
-    // 鉴于F#没法匹配不完全的list，我会采用类似Parser构造的方式来写预编译而不是用match
+    type ParamerIsNotSymbol(pos: Pos) = inherit System.ApplicationException()   
+    type InvalidTopLevelExpr(pos: Pos) = inherit System.ApplicationException()
 
-    let prec (context: CompilerContext) (args: MataTree)(*: RootNode*)=
-        match args with
-        | {valu=List([{valu=Symbol("static-load")}; sym])} -> 0
-        | {valu=List([{valu=Symbol("dynamic-load")}; sym])} -> 0
-        | {valu=List([{valu=Symbol("export")}; {valu=List(x)}])} as t -> 0
-        | {valu=List([{valu=Symbol("type")}; argt; rett])} -> 0
-        | {valu=List([{valu=Symbol("macro")}; args; body])} -> 0
-        | {valu=List([{valu=Symbol("def")}; {valu=Symbol(name)}; argt])} -> 0
-        | _ -> 0
+    let getSymbol (args: MataTree) =
+        match args.valu with
+        | Symbol (s) -> s
+        | _ -> raise (ParamerIsNotSymbol args.pos)
+
+    let prec (context: CompilerContext) (args: MataTree): RootNode =
+        match args.valu with
+        | RValue.List ({valu=Symbol("import")}::t) -> {
+            pos= args.pos;
+            ast= Import ((List.map getSymbol) t)}
+        | RValue.List ({valu=Symbol("load")}::t) -> {
+            pos= args.pos;
+            ast= Load ((List.map getSymbol) t)}
+        | RValue.List ({valu=Symbol("export")}::t) -> {
+            pos= args.pos;
+            ast= Export ((List.map getSymbol) t)}
+        | RValue.Nil -> {
+            pos= args.pos;
+            ast = Nil}
+        | _ -> raise (InvalidTopLevelExpr args.pos)
