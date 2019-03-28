@@ -1,10 +1,12 @@
-﻿Grammar := load | def | macro | let | use | macro-call
+﻿Grammar := st-load | dy-load | def | macro | macro-call
 
 load := st-load | dy-load
 
 st-load := (static-load <module-name>)
 
-dy-load := (dynamic-load <module-name>)
+dy-load := (dynamic-load <package-name>)
+
+export := (export <function-name>*)
 
 body := let | use | cond | match | lambda | dy-load | macro-call | fun-call
 
@@ -18,7 +20,7 @@ macro :=
 
 lambda := (<lam> <pattern> <body>*)
 
-lam := '\' | "lambda"
+lam := '\' # | "lambda"
 
 let :=
 (let <pattern> <expr>
@@ -40,3 +42,5 @@ fun-call :=
 (<expr> <expr>*)
 
 pattern := _ | (<pattern> . <pattern>) | <expr>
+
+typelabal := (type <function-name> <consture>)
