@@ -6,31 +6,21 @@ module Precompiler =
 
     type Body =
     | Atom
-    | Let of (RValue * BodyNode * BodyNode[])
-    | Use of (FunctionConst * string * BodyNode * BodyNode[])
-    | Cond of (BodyNode * BodyNode)[]
-    | Match of (Body)
+    | Let of (RValue * BodyNode * BodyNode list)
+    | Use of (FunctionConst * string * BodyNode * BodyNode list)
+    | Cond of (BodyNode * BodyNode) list
+    //| Match of (Body)
+    | Quote of RValue
     | Lambda of FunctionConst
     | DyLoad of string
     | FunCall
     //| MacroCall
 
-    and BodyNode = {
-        pos: Pos
-        body: Body
-    }
+    and BodyNode = (Pos * Body)
 
-    and FunctionConst = {
-        name: string
-        args: MataTree
-        body: BodyNode[]
-    }
+    and FunctionConst = (string * MataTree * BodyNode)
 
-    type MacroConst = {
-        name: string
-        args: MataTree
-        body: BodyNode[]
-    }
+    type MacroConst = FunctionConst
 
     (*
     type MacroCall = {
@@ -49,7 +39,7 @@ module Precompiler =
     | Char
     | List of typeLabal
     | Tuple of typeLabal list
-    | Struct of string
+    //| Struct of string
     | Function of functionTypeLabal
 
     and functionTypeLabal = (typeLabal list * typeLabal)
@@ -62,7 +52,7 @@ module Precompiler =
     | Defun of FunctionConst
     | DefMacro of MacroConst
     | TypeLabel of functionTypeLabal
-    //| MacroCall of MacroCall
+    | MacroCall of (string * MataTree)
 
     type RootNode = {
         pos: LParserC.LParserC.Pos
@@ -98,6 +88,10 @@ module Precompiler =
         | RValue.List ({valu=Symbol("export")}::t) -> {
             pos= args.pos;
             ast= Export ((List.map getSymbol) t)}
+        // TODO:...
+        | RValue.List ({valu=Symbol(macroName)}::t) -> {
+            pos= args.pos;
+            ast= MacroCall (macroName, {pos= args.pos; valu= RValue.List t})}
         | RValue.Nil -> {
             pos= args.pos;
             ast = Nil}
