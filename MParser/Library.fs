@@ -18,7 +18,7 @@ module MParser =
         | Float     of float
         | String    of string
         | Symbol    of string
-        | Tuple     of MataTree array
+        //| Tuple     of MataTree array
         | List      of MataTree list
 
     type MParser = StrStream option -> (MataTree * StrStream) option
