@@ -17,7 +17,7 @@ type TestClass () =
             printfn "pos: %A" s.pos
             printfn "%A" x
             Assert.IsTrue(x);
-        | _ -> failwith "Éµ±Æ£¬Õ¨ÁË°É£¬¹þ¹þ¹þ¹þ¹þ¹þ¹þ"
+        | _ -> failwith "boom"
     
     [<TestMethod>]
     member this.TestUIntParser () =
@@ -27,7 +27,7 @@ type TestClass () =
             printfn "pos: %A" s.pos
             printfn "%A" x
             Assert.AreEqual(uint64 123, x);
-        | _ -> failwith "Éµ±Æ£¬Õ¨ÁË°É£¬¹þ¹þ¹þ¹þ¹þ¹þ¹þ"
+        | _ -> failwith "boom"
 
     [<TestMethod>]
     member this.TestIntParser () =
@@ -37,7 +37,7 @@ type TestClass () =
             printfn "pos: %A" s.pos
             printfn "%A" x
             Assert.AreEqual(int64 -123, x);
-        | _ -> failwith "Éµ±Æ£¬Õ¨ÁË°É£¬¹þ¹þ¹þ¹þ¹þ¹þ¹þ"
+        | _ -> failwith "boom"
 
     [<TestMethod>]
     member this.TestCharParser () =
@@ -47,7 +47,7 @@ type TestClass () =
             printfn "pos: %A" s.pos
             printfn "%A" x
             Assert.AreEqual('\n', x);
-        | _ -> failwith "Éµ±Æ£¬Õ¨ÁË°É£¬¹þ¹þ¹þ¹þ¹þ¹þ¹þ"
+        | _ -> failwith "boom"
 
     [<TestMethod>]
     member this.TestStringParser () =
@@ -57,7 +57,7 @@ type TestClass () =
             printfn "pos: %A" s.pos
             printfn "%A" x
             Assert.AreEqual("\"\\ssr\"", x);
-        | _ -> failwith "Éµ±Æ£¬Õ¨ÁË°É£¬¹þ¹þ¹þ¹þ¹þ¹þ¹þ"
+        | _ -> failwith "boom"
 
     [<TestMethod>]
     member this.TestSymbolParser () =
@@ -68,7 +68,7 @@ type TestClass () =
             printfn "%A" x
             printfn "%A" s
             Assert.AreEqual("Ss90t", x);
-        | _ -> failwith "Éµ±Æ£¬Õ¨ÁË°É£¬¹þ¹þ¹þ¹þ¹þ¹þ¹þ"
+        | _ -> failwith "boom"
 
     [<TestMethod>]
     member this.TestXdParser () =
@@ -77,7 +77,7 @@ type TestClass () =
         | Nil -> 
             printfn "pos: %A" s.pos
             //Assert.AreNotEqual(, x);
-        | _ -> failwith "Éµ±Æ£¬Õ¨ÁË°É£¬¹þ¹þ¹þ¹þ¹þ¹þ¹þ"
+        | _ -> failwith "boom"
     
     [<TestMethod>]
     member this.TestListParser () =
@@ -87,7 +87,7 @@ type TestClass () =
             printfn "pos: %A" s.pos
             printfn "%A" x
             //Assert.AreNotEqual(, x);
-        | _ -> failwith "Éµ±Æ£¬Õ¨ÁË°É£¬¹þ¹þ¹þ¹þ¹þ¹þ¹þ"
+        | _ -> failwith "boom"
 
     (*
     [<TestMethod>]
@@ -98,5 +98,5 @@ type TestClass () =
             printfn "pos: %A" s.pos
             printfn "%A" x
             //Assert.AreNotEqual(, x);
-        | _ -> failwith "Éµ±Æ£¬Õ¨ÁË°É£¬¹þ¹þ¹þ¹þ¹þ¹þ¹þ"
+        | _ -> failwith "boom"
         *)
