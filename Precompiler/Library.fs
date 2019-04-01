@@ -5,22 +5,18 @@ module Precompiler =
     open LParserC.LParserC
 
     type Body =
-    | Atom
+    | Const of RValue
     | Let of (RValue * BodyNode * BodyNode list)
-    | Use of (FunctionConst * string * BodyNode * BodyNode list)
+    | Use of (Body * string * BodyNode * BodyNode list)
     | Cond of (BodyNode * BodyNode) list
     //| Match of (Body)
     | Quote of RValue
-    | Lambda of FunctionConst
+    | Lambda of (MataTree * BodyNode)
     | DyLoad of string
     | FunCall
     //| MacroCall
 
     and BodyNode = (Pos * Body)
-
-    and FunctionConst = (string * MataTree * BodyNode)
-
-    type MacroConst = FunctionConst
 
     (*
     type MacroCall = {
@@ -31,6 +27,7 @@ module Precompiler =
 
     type typeLabel =
     | Any
+    | Or of (typeLabel * typeLabel)
     | Nil
     | Int
     | Uint
@@ -43,13 +40,32 @@ module Precompiler =
     //| Struct of string
     | Function of (typeLabel * typeLabel)
 
+    let rec Equ self o2 =
+        match (self, o2) with
+        | (Any, _) | (_, Any) -> true
+        | (Or (x1, x2), Or (y1, y2)) -> (Equ x1 y1 && Equ x2 y2) || (Equ x1 y2 && Equ x2 y1)
+        | (List (x), List (y)) -> Equ x y
+        | (Tuple (x), Tuple (y)) -> rtrt x y
+        | (Function (x, y), Function (x2, y2)) -> Equ x y && Equ x2 y2
+        | (x, y) when x = y -> true
+        | _ -> false
+
+    and rtrt t1 t2 =
+        match (t1, t2) with
+        | (v::t, v2::t2) ->
+            if Equ v v2
+            then rtrt t t2
+            else false
+        | ([], []) -> true
+        | _ -> false
+
     type TopAst =
     | Nil
     | Import of string list
     | Load of string list
     | Export of string list
-    | Defun of FunctionConst
-    | DefMacro of MacroConst
+    | Defun of (string * MataTree * BodyNode list)
+    | DefMacro of (string * MataTree * BodyNode list)
     | TypeLabel of typeLabel
     | MacroCall of (string * MataTree)
 
@@ -72,6 +88,8 @@ module Precompiler =
     type ParamerIsNotSymbol(pos: Pos) = inherit System.ApplicationException()   
     type InvalidTopLevelExpr(pos: Pos) = inherit System.ApplicationException()
 
+    let rec getBodyNode (args: MataTree) = 0
+
     let rec getTypeLabel (args: MataTree) =
         match args.valu with
         | Symbol (s) when s = "any" -> typeLabel.Any
@@ -82,6 +100,8 @@ module Precompiler =
         | Symbol (s) when s = "bool" -> typeLabel.Bool
         | Symbol (s) when s = "char" -> typeLabel.Char
         | Symbol (s) when s = "string" -> typeLabel.String
+        | RValue.List ([{valu=Symbol("|")}; t1; t2]) ->
+            typeLabel.Or ((getTypeLabel t1), (getTypeLabel t2))
         | RValue.List ([{valu=Symbol("list")}; t]) ->
             typeLabel.List (getTypeLabel t)
         | RValue.List ([{valu=Symbol("fun")}; pt; rt]) ->
@@ -112,7 +132,14 @@ module Precompiler =
         | RValue.List ([{valu=Symbol("type")}; tp]) -> {
             pos= args.pos;
             ast= TypeLabel (getTypeLabel tp)}
-        // TODO:...
+            (*
+        | RValue.List ({valu=Symbol("fun")} :: {valu=Symbol(name)} :: p ::t) -> {
+            pos= args.pos;
+            ast= Defun (name, p, (List.map getBodyNode) t)}
+        | RValue.List ({valu=Symbol("macro")} :: {valu=Symbol(name)} :: p ::t) -> {
+            pos= args.pos;
+            ast= Defun (name, p, (List.map getBodyNode) t)}
+            *)
         | RValue.List ({valu=Symbol(macroName)}::t) -> {
             pos= args.pos;
             ast= MacroCall (macroName, {pos= args.pos; valu= RValue.List t})}

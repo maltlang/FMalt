@@ -11,7 +11,9 @@ Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "FMalt", "FMalt\FMalt.fsproj
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "MParser.Test", "MParser.Test\MParser.Test.fsproj", "{0E664F31-41C3-4A8B-B498-412431531BCB}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Precompiler", "Precompiler\Precompiler.fsproj", "{70718D84-9909-4B4B-B9D2-51CDCF5F8E68}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Precompiler", "Precompiler\Precompiler.fsproj", "{70718D84-9909-4B4B-B9D2-51CDCF5F8E68}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Precompiler.Test", "Precompiler.Test\Precompiler.Test.fsproj", "{B8E60BAF-A44E-41F5-88AB-915D756C9F62}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{70718D84-9909-4B4B-B9D2-51CDCF5F8E68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70718D84-9909-4B4B-B9D2-51CDCF5F8E68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70718D84-9909-4B4B-B9D2-51CDCF5F8E68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8E60BAF-A44E-41F5-88AB-915D756C9F62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8E60BAF-A44E-41F5-88AB-915D756C9F62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8E60BAF-A44E-41F5-88AB-915D756C9F62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8E60BAF-A44E-41F5-88AB-915D756C9F62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

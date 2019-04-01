@@ -88,7 +88,8 @@ type TestClass () =
             printfn "%A" x
             //Assert.AreNotEqual(, x);
         | _ -> failwith "и╣╠фё╛у╗ак╟иё╛╧Ч╧Ч╧Ч╧Ч╧Ч╧Ч╧Ч"
-    
+
+    (*
     [<TestMethod>]
     member this.TestMaltParser () =
         let (v, s) = (MaltParser (Some (createStrStream (Console.ReadLine ())))).Value;
@@ -98,3 +99,4 @@ type TestClass () =
             printfn "%A" x
             //Assert.AreNotEqual(, x);
         | _ -> failwith "и╣╠фё╛у╗ак╟иё╛╧Ч╧Ч╧Ч╧Ч╧Ч╧Ч╧Ч"
+        *)
