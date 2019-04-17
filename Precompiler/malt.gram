@@ -1,46 +1,15 @@
-﻿Grammar := st-load | dy-load | def | macro | macro-call
+﻿grammar := expr
 
-load := st-load | dy-load
+expr := method-call | lambda | let | use | set | Const
 
-st-load := (static-load <module-name>)
+method-call := (<expr> symbol <expr>*)
 
-dy-load := (dynamic-load <package-name>)
+lambda := (\ <pattern> <expr>*)
 
-export := (export <function-name>*)
+let := (let <id> <expr> <expr>*)
 
-body := let | use | cond | match | lambda | dy-load | macro-call | fun-call
+use := (use <id> <expr> <expr>*)
 
-def :=
-(fun <function-name> <pattern>
-    <body>*)
+set := (set <id> <expr>)
 
-macro := 
-(macro <macro-name> <pattern>
-    <body>*)
-
-lambda := (<lam> <pattern> <body>*)
-
-lam := '\' # | "lambda"
-
-let :=
-(let <pattern> <expr>
-    <body>*)
-use :=
-(use [<value-name> <value-name:close-function>] <expr>
-    <body>*)
-
-cond :=
-(cond [<expr> <body>*]*)
-
-match :=
-(match <expr> [<pattern> <body>*]*)
-
-macro-call :=
-(<macro-name> <expr>*)
-
-fun-call :=
-(<expr> <expr>*)
-
-pattern := _ | (<pattern> . <pattern>) | <expr>
-
-typelabal := (type <function-name> <consture>)
+Const := int | uint | float | char | string

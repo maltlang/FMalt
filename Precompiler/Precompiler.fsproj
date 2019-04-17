@@ -7,9 +7,9 @@
   <ItemGroup>
     <None Include="malt.gram" />
     <Compile Include="Library.fs" />
+    <None Include="old-malt.gram" />
+    <Compile Include="old-Library.fs" />
   </ItemGroup>
-
-  <ItemGroup />
 
   <ItemGroup>
     <ProjectReference Include="..\MParser\MParser.fsproj" />
