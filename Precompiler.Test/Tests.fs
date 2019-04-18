@@ -4,12 +4,12 @@ open System
 open Microsoft.VisualStudio.TestTools.UnitTesting
 open MParser
 open Precompiler.Precompiler
-open System
-open System
 
 [<TestClass>]
 type TestClass () =
     [<TestMethod>]
-    member this.getTypeLabel1 () =
-        let (m, _) = (Some ("(int uint)" |> LParserC.LParserC.createStrStream) |> MParser.MaltParser).Value
-        Assert.IsTrue(Equ (m |> getTypeLabel) Any);
+    member this.testPrec () =
+        let (m, _) = (Some ("(\ (a b) a)" |> LParserC.LParserC.createStrStream) |> MParser.MaltParser).Value
+        let a = prec m
+        printfn "%A" a
+        //Assert.IsTrue(m |> getTypeLabel) Any);

@@ -2,7 +2,7 @@
 
 expr := method-call | lambda | let | use | set | Const
 
-method-call := (<expr> symbol <expr>*)
+method-call := (<expr> <id> <expr>*)
 
 lambda := (\ <pattern> <expr>*)
 
