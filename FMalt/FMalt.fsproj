@@ -9,4 +9,10 @@
     <Compile Include="Program.fs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CodeGen\CodeGen.fsproj" />
+    <ProjectReference Include="..\MParser\MParser.fsproj" />
+    <ProjectReference Include="..\Precompiler\Precompiler.fsproj" />
+  </ItemGroup>
+
 </Project>

@@ -260,6 +260,61 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "CodeGen/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "FSharp.Core": "4.5.2",
+          "Precompiler": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CodeGen.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CodeGen.dll": {}
+        }
+      },
+      "LParserC/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "FSharp.Core": "4.5.2"
+        },
+        "compile": {
+          "bin/placeholder/LParserC.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LParserC.dll": {}
+        }
+      },
+      "MParser/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "FSharp.Core": "4.5.2",
+          "LParserC": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MParser.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MParser.dll": {}
+        }
+      },
+      "Precompiler/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "FSharp.Core": "4.5.2",
+          "MParser": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Precompiler.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Precompiler.dll": {}
+        }
       }
     }
   },
@@ -781,12 +836,35 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "CodeGen/1.0.0": {
+      "type": "project",
+      "path": "../CodeGen/CodeGen.fsproj",
+      "msbuildProject": "../CodeGen/CodeGen.fsproj"
+    },
+    "LParserC/1.0.0": {
+      "type": "project",
+      "path": "../LParserC/LParserC/LParserC.fsproj",
+      "msbuildProject": "../LParserC/LParserC/LParserC.fsproj"
+    },
+    "MParser/1.0.0": {
+      "type": "project",
+      "path": "../MParser/MParser.fsproj",
+      "msbuildProject": "../MParser/MParser.fsproj"
+    },
+    "Precompiler/1.0.0": {
+      "type": "project",
+      "path": "../Precompiler/Precompiler.fsproj",
+      "msbuildProject": "../Precompiler/Precompiler.fsproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
+      "CodeGen >= 1.0.0",
       "FSharp.Core >= 4.5.2",
-      "Microsoft.NETCore.App >= 2.1.0"
+      "MParser >= 1.0.0",
+      "Microsoft.NETCore.App >= 2.1.0",
+      "Precompiler >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -818,7 +896,17 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\lyzh\\source\\repos\\FMalt\\CodeGen\\CodeGen.fsproj": {
+              "projectPath": "C:\\Users\\lyzh\\source\\repos\\FMalt\\CodeGen\\CodeGen.fsproj"
+            },
+            "C:\\Users\\lyzh\\source\\repos\\FMalt\\MParser\\MParser.fsproj": {
+              "projectPath": "C:\\Users\\lyzh\\source\\repos\\FMalt\\MParser\\MParser.fsproj"
+            },
+            "C:\\Users\\lyzh\\source\\repos\\FMalt\\Precompiler\\Precompiler.fsproj": {
+              "projectPath": "C:\\Users\\lyzh\\source\\repos\\FMalt\\Precompiler\\Precompiler.fsproj"
+            }
+          }
         }
       }
     },

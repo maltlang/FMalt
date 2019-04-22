@@ -1,6 +1,8 @@
 ﻿// Learn more about F# at http://fsharp.org
 
 open System
+open MParser
+open Precompiler
 
 [<EntryPoint>]
 let main argv =

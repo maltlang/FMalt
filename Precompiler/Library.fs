@@ -53,3 +53,5 @@ module Precompiler =
         | RValue.List (e :: {valu=RValue.Symbol (name)} :: ex) ->
             (MethodCall ((prec e, name, ((List.map prec) ex))), args.pos)
         | _ -> raise (InvalidTopLevelExpr args.pos)
+    
+    let inline Prec x = prec x

@@ -8,3 +8,12 @@ C:\Users\lyzh\source\repos\FMalt\FMalt\obj\Debug\netcoreapp2.1\FMalt.AssemblyInf
 C:\Users\lyzh\source\repos\FMalt\FMalt\obj\Debug\netcoreapp2.1\FMalt.dll
 C:\Users\lyzh\source\repos\FMalt\FMalt\obj\Debug\netcoreapp2.1\FMalt.pdb
 C:\Users\lyzh\source\repos\FMalt\FMalt\obj\Debug\netcoreapp2.1\FMalt.fsprojAssemblyReference.cache
+C:\Users\lyzh\source\repos\FMalt\FMalt\bin\Debug\netcoreapp2.1\CodeGen.dll
+C:\Users\lyzh\source\repos\FMalt\FMalt\bin\Debug\netcoreapp2.1\LParserC.dll
+C:\Users\lyzh\source\repos\FMalt\FMalt\bin\Debug\netcoreapp2.1\MParser.dll
+C:\Users\lyzh\source\repos\FMalt\FMalt\bin\Debug\netcoreapp2.1\Precompiler.dll
+C:\Users\lyzh\source\repos\FMalt\FMalt\bin\Debug\netcoreapp2.1\CodeGen.pdb
+C:\Users\lyzh\source\repos\FMalt\FMalt\bin\Debug\netcoreapp2.1\MParser.pdb
+C:\Users\lyzh\source\repos\FMalt\FMalt\bin\Debug\netcoreapp2.1\Precompiler.pdb
+C:\Users\lyzh\source\repos\FMalt\FMalt\bin\Debug\netcoreapp2.1\LParserC.pdb
+C:\Users\lyzh\source\repos\FMalt\FMalt\obj\Debug\netcoreapp2.1\FMalt.fsproj.CopyComplete

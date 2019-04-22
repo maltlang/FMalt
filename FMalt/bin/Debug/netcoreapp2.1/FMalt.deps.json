@@ -8,7 +8,10 @@
     ".NETCoreApp,Version=v2.1": {
       "FMalt/1.0.0": {
         "dependencies": {
-          "FSharp.Core": "4.5.2"
+          "CodeGen": "1.0.0",
+          "FSharp.Core": "4.5.2",
+          "MParser": "1.0.0",
+          "Precompiler": "1.0.0"
         },
         "runtime": {
           "FMalt.dll": {}
@@ -65,6 +68,41 @@
             "locale": "zh-Hant"
           }
         }
+      },
+      "CodeGen/1.0.0": {
+        "dependencies": {
+          "FSharp.Core": "4.5.2",
+          "Precompiler": "1.0.0"
+        },
+        "runtime": {
+          "CodeGen.dll": {}
+        }
+      },
+      "LParserC/1.0.0": {
+        "dependencies": {
+          "FSharp.Core": "4.5.2"
+        },
+        "runtime": {
+          "LParserC.dll": {}
+        }
+      },
+      "MParser/1.0.0": {
+        "dependencies": {
+          "FSharp.Core": "4.5.2",
+          "LParserC": "1.0.0"
+        },
+        "runtime": {
+          "MParser.dll": {}
+        }
+      },
+      "Precompiler/1.0.0": {
+        "dependencies": {
+          "FSharp.Core": "4.5.2",
+          "MParser": "1.0.0"
+        },
+        "runtime": {
+          "Precompiler.dll": {}
+        }
       }
     }
   },
@@ -80,6 +118,26 @@
       "sha512": "sha512-apbdQOjzsjQ637kTWQuW29jqwY18jsHMyNC5A+TPJZKFEIE2cIfQWf3V7+mXrxlbX69BueYkv293/g70wuXuRw==",
       "path": "fsharp.core/4.5.2",
       "hashPath": "fsharp.core.4.5.2.nupkg.sha512"
+    },
+    "CodeGen/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LParserC/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MParser/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Precompiler/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }
