@@ -14,7 +14,7 @@ module Precompiler =
     | Const of RValue
     | Symbol of string
     | Set of (string * Expr)
-    | Let of (string * Expr * Expr list)
+    | Let of (string * Expr)
     | Use of (string * Expr * Expr list)
     | Lambda of (string list * Expr list)
     | MethodCall of (Expr * string * Expr list)
@@ -40,10 +40,10 @@ module Precompiler =
             (Const (RValue.Symbol (name)), args.pos)
         | RValue.List ([{valu=RValue.Symbol("set")}; {valu=RValue.Symbol(name)}; e]) ->
             (Set (name, prec e), args.pos)
-        | RValue.List ({valu=RValue.Symbol("let")} ::
-                        {valu=RValue.Symbol(name)} ::
-                        e :: ex) ->
-            (Let (name, prec e, ((List.map prec) ex)), args.pos)
+        | RValue.List ([{valu=RValue.Symbol("let")};
+                        {valu=RValue.Symbol(name)};
+                        e]) ->
+            (Let (name, prec e), args.pos)
         | RValue.List ({valu=RValue.Symbol("use")} ::
                         {valu=RValue.Symbol(name)} ::
                         e :: ex) ->

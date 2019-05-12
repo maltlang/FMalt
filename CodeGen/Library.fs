@@ -75,13 +75,14 @@ module CodeGen =
             with
             | :? KeyNotFoundException ->
                 Some ({
-                symbol_table=   Array.append env.symbol_table [| x |];
-                const_area=     env.const_area;
-                method_area=    env.method_area;
-                global_method=  env.global_method}, [| (p.line, load_symbol, env.symbol_table.Length - 1) |])
+                symbol_table    = Array.append env.symbol_table [| x |];
+                const_area      = env.const_area;
+                method_area     = env.method_area;
+                global_method   = env.global_method}, [| (p.line, load_symbol, env.symbol_table.Length - 1) |])
 
     let rec CodeGenerator (env: ModuleContext) ((e, p): Expr) =
         match e with
+        | ExprValue.Nil -> None
         | ExprValue.Const (x) ->
             rlsConst env x p
         | ExprValue.Symbol (x) ->
@@ -92,6 +93,53 @@ module CodeGen =
                 let (env, codes2)   = (rlsSymbol env name p).Value
                 let (_, _, offset)  = Array.get codes2 0
                 Some (env, (Array.append codes [| (p.line, write_object_symbol, offset) |]))
-            | None -> failwith "AstError: '(set <id> <expr>)' expr is None"
+            | None ->
+                failwithf "CodeGenError: '(set <id> <expr>)' expr is None: %i,%i"
+                          p.line p.col
+        | ExprValue.Let (name, expr) ->
+            match CodeGenerator env expr with
+            | Some (env, codes) ->
+                let (env, codes2)   = (rlsSymbol env name p).Value
+                let (_, _, offset)  = Array.get codes2 0
+                Some (env, (Array.append codes [| (p.line, write_local_symbol, offset) |]))
+            | None ->
+                failwithf "CodeGenError: '(let <id> <expr>)' expr is None: %i,%i"
+                          p.line p.col
+        | ExprValue.Use (name, expr, exprs) ->
+            match CodeGenerator env expr with
+            | Some (env, codes) ->
+                let (env, codes2)   = (rlsSymbol env name p).Value
+                let (_, _, offset)  = Array.get codes2 0
+                // 处理exprs是不是Some
+                let proc1 p x =
+                    match x with
+                        | Some (x) -> x
+                        | _ -> failwithf "CodeGenError: '(Use <id> <expr> <expr>*)' expr is None: %i,%i"
+                                p.line p.col
+
+                let rec proc2 codes =
+                    match codes with
+                    | [(_, r)] -> r
+                    | (_, codes) :: b -> Array.append codes (proc2 b)
+                    | _ -> failwith "???"
+
+                let exprsResult =
+                    exprs
+                    |> List.map (CodeGenerator env)
+                    |> List.map (proc1 p)
+                    |> proc2
+                
+                let lcode = [| (p.line, write_local_symbol, offset) |]
+                let dcode = [| (p.line, delete, offset) |]
+                // 写变量
+                let readcode = Array.append codes lcode
+                // 过程与delete
+                let proccode = Array.append exprsResult dcode
+                
+                Some (env, Array.append readcode proccode)
+            | None ->
+                failwithf "CodeGenError: '(Use <id> <expr> <expr>*)' expr is None: %i,%i"
+                          p.line p.col
+        
         | _ -> None
     
