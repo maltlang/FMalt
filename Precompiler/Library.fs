@@ -5,9 +5,9 @@ module Precompiler =
     open LParserC.LParserC
     //open Map
 
-    type InvalidTypeLabel(pos: Pos) = inherit System.ApplicationException()
-    type ParamerIsNotSymbol(pos: Pos) = inherit System.ApplicationException()   
-    type InvalidTopLevelExpr(pos: Pos) = inherit System.ApplicationException()
+    type InvalidTypeLabel(pos: Pos)     = inherit System.ApplicationException()
+    type ParamerIsNotSymbol(pos: Pos)   = inherit System.ApplicationException()   
+    type InvalidTopLevelExpr(pos: Pos)  = inherit System.ApplicationException()
 
     type ExprValue =
     | Nil
