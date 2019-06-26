@@ -1,0 +1,8 @@
+(srcpath.\test1.txt)
+(\
+(1:2 2 os)
+(1:1 5 setitem)
+(1:13 0 String ""target"")
+(1:22 0 String ""Windows"")
+(1:1 9 3)
+)

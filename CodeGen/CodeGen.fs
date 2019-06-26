@@ -69,7 +69,7 @@ module CodeGen =
     type ModuleContext = {
         path:           string
         lambdas:        string array ref
-        global_lambda:  string
+        global_lambda:  string ref
     }
 
     let rec CodeGen2WordCode (m: ModuleContext) ((e, p): Expr) =

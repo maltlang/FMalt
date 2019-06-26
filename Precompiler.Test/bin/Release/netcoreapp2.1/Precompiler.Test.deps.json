@@ -6,17 +6,16 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.1": {
-      "MParser.Test/1.0.0": {
+      "Precompiler.Test/1.0.0": {
         "dependencies": {
           "FSharp.Core": "4.6.2",
-          "LParserC": "1.0.0",
-          "MParser": "1.0.0",
           "MSTest.TestAdapter": "1.3.2",
           "MSTest.TestFramework": "1.3.2",
-          "Microsoft.NET.Test.Sdk": "15.9.0"
+          "Microsoft.NET.Test.Sdk": "15.9.0",
+          "Precompiler": "1.0.0"
         },
         "runtime": {
-          "MParser.Test.dll": {}
+          "Precompiler.Test.dll": {}
         }
       },
       "FSharp.Core/4.6.2": {
@@ -1084,11 +1083,20 @@
         "runtime": {
           "MParser.dll": {}
         }
+      },
+      "Precompiler/1.0.0": {
+        "dependencies": {
+          "FSharp.Core": "4.6.2",
+          "MParser": "1.0.0"
+        },
+        "runtime": {
+          "Precompiler.dll": {}
+        }
       }
     }
   },
   "libraries": {
-    "MParser.Test/1.0.0": {
+    "Precompiler.Test/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -1596,6 +1604,11 @@
       "sha512": ""
     },
     "MParser/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Precompiler/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
