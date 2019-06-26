@@ -44,6 +44,5 @@ let main argv =
     argv
     |> Array.map (fun x -> new Task(fun _ -> comp1 x))
     |> Array.map (fun x -> x.Start (); x)
-    |> Array.map (fun x -> x.Wait ())
-    |> ignore
+    |> Array.iter (fun x -> x.Wait ())
     0
