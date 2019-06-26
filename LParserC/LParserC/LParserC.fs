@@ -18,7 +18,7 @@ module LParserC =
     }
 
     let inline createStrStream (s: string) = {
-            valu    = s;
+            valu    = s + " ";
             size    = 0;
             pos = {
                 col = 1;

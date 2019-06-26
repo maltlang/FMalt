@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.1": {
-      "FSharp.Core/4.5.2": {
+      "FSharp.Core/4.6.2": {
         "type": "package",
         "compile": {
           "lib/netstandard1.6/FSharp.Core.dll": {}
@@ -265,7 +265,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
-          "FSharp.Core": "4.5.2"
+          "FSharp.Core": "4.6.2"
         },
         "compile": {
           "bin/placeholder/LParserC.dll": {}
@@ -278,7 +278,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
-          "FSharp.Core": "4.5.2",
+          "FSharp.Core": "4.6.2",
           "LParserC": "1.0.0"
         },
         "compile": {
@@ -292,7 +292,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
-          "FSharp.Core": "4.5.2",
+          "FSharp.Core": "4.6.2",
           "MParser": "1.0.0"
         },
         "compile": {
@@ -305,18 +305,17 @@
     }
   },
   "libraries": {
-    "FSharp.Core/4.5.2": {
-      "sha512": "apbdQOjzsjQ637kTWQuW29jqwY18jsHMyNC5A+TPJZKFEIE2cIfQWf3V7+mXrxlbX69BueYkv293/g70wuXuRw==",
+    "FSharp.Core/4.6.2": {
+      "sha512": "/waJ3a7u7MjFOGnXOfokbG1N1FH7VCmP3Fw1tJ8Q75kIj60LYBL3eYzab9hDimL5E21uhQ/1wf04M3dRAYemlw==",
       "type": "package",
-      "path": "fsharp.core/4.5.2",
+      "path": "fsharp.core/4.6.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "fsharp.core.4.5.2.nupkg.sha512",
+        "fsharp.core.4.6.2.nupkg.sha512",
         "fsharp.core.nuspec",
         "lib/net45/FSharp.Core.dll",
         "lib/net45/FSharp.Core.optdata",
-        "lib/net45/FSharp.Core.resources.dll",
         "lib/net45/FSharp.Core.sigdata",
         "lib/net45/FSharp.Core.xml",
         "lib/net45/cs/FSharp.Core.resources.dll",
@@ -350,7 +349,8 @@
         "lib/netstandard1.6/ru/FSharp.Core.resources.dll",
         "lib/netstandard1.6/tr/FSharp.Core.resources.dll",
         "lib/netstandard1.6/zh-Hans/FSharp.Core.resources.dll",
-        "lib/netstandard1.6/zh-Hant/FSharp.Core.resources.dll"
+        "lib/netstandard1.6/zh-Hant/FSharp.Core.resources.dll",
+        "paket-installmodel.cache"
       ]
     },
     "Microsoft.NETCore.App/2.1.0": {
@@ -679,7 +679,7 @@
       ]
     },
     "Microsoft.NETCore.Targets/2.1.0": {
-      "sha512": "x188gIZXOwFXkPXyGavEcPGcR6RGvjFOES2QzskN4gERZjWPN34qhRsZVMC0CLJfQLGSButarcgWxPPM4vmg0w==",
+      "sha512": "8BmxKBaAmCF3LwhFAhrZnuKCFnMOqU1Lx4JyUkSSmYtG7bDKN5kLsqRP5xNFFX3o3yVTS0UJidLAsyMZ28gbZQ==",
       "type": "package",
       "path": "microsoft.netcore.targets/2.1.0",
       "files": [
@@ -690,13 +690,14 @@
         "lib/netstandard1.0/_._",
         "microsoft.netcore.targets.2.1.0.nupkg.sha512",
         "microsoft.netcore.targets.nuspec",
+        "paket-installmodel.cache",
         "runtime.json",
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
     },
     "NETStandard.Library/2.0.3": {
-      "sha512": "st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
+      "sha512": "48/SuKOEQrn45jWnHGJlut7yTyr5Zu+G7WtGpa3AQ/T+IDDHkdA23wYPN3XqbcPtmD0msitnvbA0nRodY+mP3Q==",
       "type": "package",
       "path": "netstandard.library/2.0.3",
       "files": [
@@ -820,7 +821,8 @@
         "build/netstandard2.0/ref/netstandard.xml",
         "lib/netstandard1.0/_._",
         "netstandard.library.2.0.3.nupkg.sha512",
-        "netstandard.library.nuspec"
+        "netstandard.library.nuspec",
+        "paket-installmodel.cache"
       ]
     },
     "LParserC/1.0.0": {
@@ -841,29 +843,29 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
-      "FSharp.Core >= 4.5.2",
+      "FSharp.Core >= 4.6.2",
       "Microsoft.NETCore.App >= 2.1.0",
       "Precompiler >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lyzh\\.nuget\\packages\\": {},
+    "C:\\Users\\enter\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lyzh\\source\\repos\\FMalt\\CodeGen\\CodeGen.fsproj",
+      "projectUniqueName": "C:\\Users\\enter\\source\\repos\\FMalt\\CodeGen\\CodeGen.fsproj",
       "projectName": "CodeGen",
-      "projectPath": "C:\\Users\\lyzh\\source\\repos\\FMalt\\CodeGen\\CodeGen.fsproj",
-      "packagesPath": "C:\\Users\\lyzh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lyzh\\source\\repos\\FMalt\\CodeGen\\obj\\",
+      "projectPath": "C:\\Users\\enter\\source\\repos\\FMalt\\CodeGen\\CodeGen.fsproj",
+      "packagesPath": "C:\\Users\\enter\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\enter\\source\\repos\\FMalt\\CodeGen\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\lyzh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\enter\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -876,8 +878,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\lyzh\\source\\repos\\FMalt\\Precompiler\\Precompiler.fsproj": {
-              "projectPath": "C:\\Users\\lyzh\\source\\repos\\FMalt\\Precompiler\\Precompiler.fsproj"
+            "C:\\Users\\enter\\source\\repos\\FMalt\\Precompiler\\Precompiler.fsproj": {
+              "projectPath": "C:\\Users\\enter\\source\\repos\\FMalt\\Precompiler\\Precompiler.fsproj"
             }
           }
         }
@@ -888,7 +890,7 @@
         "dependencies": {
           "FSharp.Core": {
             "target": "Package",
-            "version": "[4.5.2, )"
+            "version": "[4.6.2, )"
           },
           "Microsoft.NETCore.App": {
             "suppressParent": "All",

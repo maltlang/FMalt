@@ -6,11 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Program.fs" />
+    <Compile Include="FMalt.fs" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\CodeGen\CodeGen.fsproj" />
+    <ProjectReference Include="..\LParserC\LParserC\LParserC.fsproj" />
     <ProjectReference Include="..\MParser\MParser.fsproj" />
     <ProjectReference Include="..\Precompiler\Precompiler.fsproj" />
   </ItemGroup>

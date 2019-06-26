@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <None Include="malt.gram" />
-    <Compile Include="Library.fs" />
+    <Compile Include="Precompiler.fs" />
     <None Include="old-malt.gram" />
   </ItemGroup>
 

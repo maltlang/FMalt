@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <Content Include="images.md" />
-    <Compile Include="Library.fs" />
+    <Compile Include="CodeGen.fs" />
   </ItemGroup>
 
   <ItemGroup />

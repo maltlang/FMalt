@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lyzh\\source\\repos\\FMalt\\MParser\\MParser.fsproj": {}
+    "C:\\Users\\enter\\source\\repos\\FMalt\\MParser\\MParser.fsproj": {}
   },
   "projects": {
-    "C:\\Users\\lyzh\\source\\repos\\FMalt\\LParserC\\LParserC\\LParserC.fsproj": {
+    "C:\\Users\\enter\\source\\repos\\FMalt\\LParserC\\LParserC\\LParserC.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lyzh\\source\\repos\\FMalt\\LParserC\\LParserC\\LParserC.fsproj",
+        "projectUniqueName": "C:\\Users\\enter\\source\\repos\\FMalt\\LParserC\\LParserC\\LParserC.fsproj",
         "projectName": "LParserC",
-        "projectPath": "C:\\Users\\lyzh\\source\\repos\\FMalt\\LParserC\\LParserC\\LParserC.fsproj",
-        "packagesPath": "C:\\Users\\lyzh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lyzh\\source\\repos\\FMalt\\LParserC\\LParserC\\obj\\",
+        "projectPath": "C:\\Users\\enter\\source\\repos\\FMalt\\LParserC\\LParserC\\LParserC.fsproj",
+        "packagesPath": "C:\\Users\\enter\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\enter\\source\\repos\\FMalt\\LParserC\\LParserC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\lyzh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\enter\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,20 +55,20 @@
         }
       }
     },
-    "C:\\Users\\lyzh\\source\\repos\\FMalt\\MParser\\MParser.fsproj": {
+    "C:\\Users\\enter\\source\\repos\\FMalt\\MParser\\MParser.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lyzh\\source\\repos\\FMalt\\MParser\\MParser.fsproj",
+        "projectUniqueName": "C:\\Users\\enter\\source\\repos\\FMalt\\MParser\\MParser.fsproj",
         "projectName": "MParser",
-        "projectPath": "C:\\Users\\lyzh\\source\\repos\\FMalt\\MParser\\MParser.fsproj",
-        "packagesPath": "C:\\Users\\lyzh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lyzh\\source\\repos\\FMalt\\MParser\\obj\\",
+        "projectPath": "C:\\Users\\enter\\source\\repos\\FMalt\\MParser\\MParser.fsproj",
+        "packagesPath": "C:\\Users\\enter\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\enter\\source\\repos\\FMalt\\MParser\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\lyzh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\enter\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -81,8 +81,8 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\Users\\lyzh\\source\\repos\\FMalt\\LParserC\\LParserC\\LParserC.fsproj": {
-                "projectPath": "C:\\Users\\lyzh\\source\\repos\\FMalt\\LParserC\\LParserC\\LParserC.fsproj"
+              "C:\\Users\\enter\\source\\repos\\FMalt\\LParserC\\LParserC\\LParserC.fsproj": {
+                "projectPath": "C:\\Users\\enter\\source\\repos\\FMalt\\LParserC\\LParserC\\LParserC.fsproj"
               }
             }
           }

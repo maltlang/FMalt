@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <None Include="Grammar.bnf" />
-    <Compile Include="Library.fs" />
+    <Compile Include="MParser.fs" />
   </ItemGroup>
 
   <ItemGroup />

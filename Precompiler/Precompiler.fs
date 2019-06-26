@@ -9,7 +9,9 @@ module Precompiler =
     type ParamerIsNotSymbol(pos: Pos)   = inherit System.ApplicationException()   
     type InvalidTopLevelExpr(pos: Pos)  = inherit System.ApplicationException()
 
-    type ExprValue =
+    type Expr = (ExprValue * Pos)
+
+    and ExprValue =
     | Nil
     | Const of RValue
     | Symbol of string
@@ -18,8 +20,6 @@ module Precompiler =
     | Use of (string * Expr * Expr list)
     | Lambda of (string list * Expr list)
     | MethodCall of (Expr * string * Expr list)
-    
-    and Expr = (ExprValue * Pos)
 
     let getSymbol (args: MataTree) =
         match args.valu with

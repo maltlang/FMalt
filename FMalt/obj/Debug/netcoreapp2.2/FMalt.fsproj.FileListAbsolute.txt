@@ -1,0 +1,17 @@
+C:\Users\enter\source\repos\FMalt\FMalt\obj\Debug\netcoreapp2.2\FMalt.fsprojAssemblyReference.cache
+C:\Users\enter\source\repos\FMalt\FMalt\obj\Debug\netcoreapp2.2\FMalt.AssemblyInfoInputs.cache
+C:\Users\enter\source\repos\FMalt\FMalt\obj\Debug\netcoreapp2.2\FMalt.AssemblyInfo.fs
+C:\Users\enter\source\repos\FMalt\FMalt\bin\Debug\netcoreapp2.2\FMalt.deps.json
+C:\Users\enter\source\repos\FMalt\FMalt\bin\Debug\netcoreapp2.2\FMalt.runtimeconfig.json
+C:\Users\enter\source\repos\FMalt\FMalt\bin\Debug\netcoreapp2.2\FMalt.runtimeconfig.dev.json
+C:\Users\enter\source\repos\FMalt\FMalt\bin\Debug\netcoreapp2.2\FMalt.dll
+C:\Users\enter\source\repos\FMalt\FMalt\bin\Debug\netcoreapp2.2\FMalt.pdb
+C:\Users\enter\source\repos\FMalt\FMalt\bin\Debug\netcoreapp2.2\CodeGen.dll
+C:\Users\enter\source\repos\FMalt\FMalt\bin\Debug\netcoreapp2.2\LParserC.dll
+C:\Users\enter\source\repos\FMalt\FMalt\bin\Debug\netcoreapp2.2\MParser.dll
+C:\Users\enter\source\repos\FMalt\FMalt\bin\Debug\netcoreapp2.2\CodeGen.pdb
+C:\Users\enter\source\repos\FMalt\FMalt\bin\Debug\netcoreapp2.2\MParser.pdb
+C:\Users\enter\source\repos\FMalt\FMalt\bin\Debug\netcoreapp2.2\LParserC.pdb
+C:\Users\enter\source\repos\FMalt\FMalt\obj\Debug\netcoreapp2.2\FMalt.fsproj.CopyComplete
+C:\Users\enter\source\repos\FMalt\FMalt\obj\Debug\netcoreapp2.2\FMalt.dll
+C:\Users\enter\source\repos\FMalt\FMalt\obj\Debug\netcoreapp2.2\FMalt.pdb
