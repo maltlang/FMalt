@@ -1,25 +1,25 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "2a3cce40ffad1aed363051b9051c2ff156f5fe39"
+    "signature": "6276bef5f7df044c25079fb0397a18e9c2f30a34"
   },
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.1": {
       "MParser/1.0.0": {
         "dependencies": {
-          "FSharp.Core": "4.5.2",
+          "FSharp.Core": "4.6.2",
           "LParserC": "1.0.0"
         },
         "runtime": {
           "MParser.dll": {}
         }
       },
-      "FSharp.Core/4.5.2": {
+      "FSharp.Core/4.6.2": {
         "runtime": {
           "lib/netstandard1.6/FSharp.Core.dll": {
-            "assemblyVersion": "4.5.0.0",
-            "fileVersion": "2018.7.27.2"
+            "assemblyVersion": "4.6.0.0",
+            "fileVersion": "2019.2.13.3"
           }
         },
         "resources": {
@@ -69,7 +69,7 @@
       },
       "LParserC/1.0.0": {
         "dependencies": {
-          "FSharp.Core": "4.5.2"
+          "FSharp.Core": "4.6.2"
         },
         "runtime": {
           "LParserC.dll": {}
@@ -83,12 +83,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "FSharp.Core/4.5.2": {
+    "FSharp.Core/4.6.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-apbdQOjzsjQ637kTWQuW29jqwY18jsHMyNC5A+TPJZKFEIE2cIfQWf3V7+mXrxlbX69BueYkv293/g70wuXuRw==",
-      "path": "fsharp.core/4.5.2",
-      "hashPath": "fsharp.core.4.5.2.nupkg.sha512"
+      "sha512": "sha512-/waJ3a7u7MjFOGnXOfokbG1N1FH7VCmP3Fw1tJ8Q75kIj60LYBL3eYzab9hDimL5E21uhQ/1wf04M3dRAYemlw==",
+      "path": "fsharp.core/4.6.2",
+      "hashPath": "fsharp.core.4.6.2.nupkg.sha512"
     },
     "LParserC/1.0.0": {
       "type": "project",

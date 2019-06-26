@@ -82,20 +82,23 @@ module CodeGen =
             (CodeGen2WordCode m e)
             + boxes p (push_env_context.ToString ())
             + boxes p (write_local_symbol.ToString () + " " + s)
-            + List.reduce (+) (List.map (CodeGen2WordCode m) es)
+            + if es.Length = 0 then "" else List.reduce (+) (List.map (CodeGen2WordCode m) es)
             + boxes p (_delete.ToString () + " " + s)
         | MethodCall (e, n, es) ->
             CodeGen2WordCode m e
             + boxes p (get_method.ToString () + " " + n.ToString ())
-            + List.reduce (+) (List.map (CodeGen2WordCode m) es)
+            + if es.Length = 0 then "" else List.reduce (+) (List.map (CodeGen2WordCode m) es)
             + boxes p (call.ToString () + " " + (es.Length + 1).ToString ())
         | Lambda (ss, es) ->
             let r = (
-                List.reduce (+) (
-                    List.map (fun x ->
-                        boxes p (write_local_symbol.ToString () + " " + x)) ss) + 
-                List.reduce (+) (
-                    List.map (CodeGen2WordCode m) es))
+                if es.Length = 0
+                then ""
+                else List.reduce (+) (
+                        List.map (
+                            fun x -> boxes p (write_local_symbol.ToString () + " " + x)) ss)+
+                        if es.Length = 0
+                        then ""
+                        else List.reduce (+) (List.map (CodeGen2WordCode m) es))
             m.lambdas := (Array.append (! m.lambdas) [| r |])
-            boxes p (load_lambda.ToString () + " " + ((!m.lambdas).Length-1).ToString ())
+            boxes p (load_lambda.ToString () + " " + ((!m.lambdas).Length+1).ToString ())
         | _ -> ""
