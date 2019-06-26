@@ -864,6 +864,7 @@
     ".NETCoreApp,Version=v2.1": [
       "CodeGen >= 1.0.0",
       "FSharp.Core >= 4.6.2",
+      "LParserC >= 1.0.0",
       "MParser >= 1.0.0",
       "Microsoft.NETCore.App >= 2.1.0",
       "Precompiler >= 1.0.0"
@@ -901,6 +902,9 @@
           "projectReferences": {
             "C:\\Users\\enter\\source\\repos\\FMalt\\CodeGen\\CodeGen.fsproj": {
               "projectPath": "C:\\Users\\enter\\source\\repos\\FMalt\\CodeGen\\CodeGen.fsproj"
+            },
+            "C:\\Users\\enter\\source\\repos\\FMalt\\LParserC\\LParserC\\LParserC.fsproj": {
+              "projectPath": "C:\\Users\\enter\\source\\repos\\FMalt\\LParserC\\LParserC\\LParserC.fsproj"
             },
             "C:\\Users\\enter\\source\\repos\\FMalt\\MParser\\MParser.fsproj": {
               "projectPath": "C:\\Users\\enter\\source\\repos\\FMalt\\MParser\\MParser.fsproj"

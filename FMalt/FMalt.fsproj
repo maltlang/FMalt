@@ -6,8 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="fmalt.sh" />
+    <None Include="fmalt.ps1" />
     <Compile Include="FMalt.fs" />
   </ItemGroup>
+
+  <ItemGroup />
 
   <ItemGroup>
     <ProjectReference Include="..\CodeGen\CodeGen.fsproj" />

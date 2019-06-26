@@ -1,0 +1,1 @@
+﻿dotnet ./fmalt.dll $args

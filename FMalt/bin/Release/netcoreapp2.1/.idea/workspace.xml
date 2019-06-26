@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3bcf5129-6f54-4031-8b34-4ec236beb1f8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../../.vs/FMalt/DesignTimeBuild/.dtbcache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../.vs/FMalt/DesignTimeBuild/.dtbcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../.vs/FMalt/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../.vs/FMalt/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../CodeGen/obj/Release/netcoreapp2.1/CodeGen.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../CodeGen/obj/Release/netcoreapp2.1/CodeGen.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../CodeGen/obj/Release/netcoreapp2.1/CodeGen.fsproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../CodeGen/obj/Release/netcoreapp2.1/CodeGen.fsproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../CodeGen/obj/Release/netcoreapp2.1/CodeGen.fsprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../CodeGen/obj/Release/netcoreapp2.1/CodeGen.fsprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../FMalt.fsproj" beforeDir="false" afterPath="$PROJECT_DIR$/../../../FMalt.fsproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMalt.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/FMalt.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMalt.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FMalt.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMalt.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FMalt.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test1.txt.mwc" beforeDir="false" afterPath="$PROJECT_DIR$/test1.txt.mwc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../obj/FMalt.fsproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../obj/FMalt.fsproj.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../obj/FMalt.fsproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../obj/FMalt.fsproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../obj/Release/netcoreapp2.1/FMalt.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../obj/Release/netcoreapp2.1/FMalt.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../obj/Release/netcoreapp2.1/FMalt.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../../obj/Release/netcoreapp2.1/FMalt.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../obj/Release/netcoreapp2.1/FMalt.fsproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../obj/Release/netcoreapp2.1/FMalt.fsproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../obj/Release/netcoreapp2.1/FMalt.fsprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../obj/Release/netcoreapp2.1/FMalt.fsprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../obj/Release/netcoreapp2.1/FMalt.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../obj/Release/netcoreapp2.1/FMalt.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../MParser.Test/obj/Release/netcoreapp2.1/MParser.Test.fsproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../MParser.Test/obj/Release/netcoreapp2.1/MParser.Test.fsproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../MParser.Test/obj/Release/netcoreapp2.1/MParser.Test.fsprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../MParser.Test/obj/Release/netcoreapp2.1/MParser.Test.fsprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../MParser/obj/Release/netcoreapp2.1/MParser.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../MParser/obj/Release/netcoreapp2.1/MParser.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../MParser/obj/Release/netcoreapp2.1/MParser.fsproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../MParser/obj/Release/netcoreapp2.1/MParser.fsproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../MParser/obj/Release/netcoreapp2.1/MParser.fsprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../MParser/obj/Release/netcoreapp2.1/MParser.fsprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Precompiler.Test/obj/Release/netcoreapp2.1/Precompiler.Test.fsproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Precompiler.Test/obj/Release/netcoreapp2.1/Precompiler.Test.fsproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Precompiler.Test/obj/Release/netcoreapp2.1/Precompiler.Test.fsprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Precompiler.Test/obj/Release/netcoreapp2.1/Precompiler.Test.fsprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Precompiler/obj/Release/netcoreapp2.1/Precompiler.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Precompiler/obj/Release/netcoreapp2.1/Precompiler.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Precompiler/obj/Release/netcoreapp2.1/Precompiler.fsproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Precompiler/obj/Release/netcoreapp2.1/Precompiler.fsproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Precompiler/obj/Release/netcoreapp2.1/Precompiler.fsprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Precompiler/obj/Release/netcoreapp2.1/Precompiler.fsprojAssemblyReference.cache" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="240" />
+    <option name="y" value="130" />
+    <option name="width" value="1440" />
+    <option name="height" value="780" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3bcf5129-6f54-4031-8b34-4ec236beb1f8" name="Default Changelist" comment="" />
+      <created>1561563166266</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1561563166266</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="240" y="130" width="1440" height="780" extended-state="0" />
+    <layout>
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="UI Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Maven" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+</project>

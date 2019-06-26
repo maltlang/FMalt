@@ -1,4 +1,4 @@
-(srcpath.\test1.txt)
+(srcpath./test1.txt)
 (\
 (1:2 2 os)
 (1:1 5 setitem)
