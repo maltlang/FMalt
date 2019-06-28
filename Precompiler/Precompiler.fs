@@ -47,11 +47,11 @@ module Precompiler =
         | RValue.List ({valu=RValue.Symbol("use")} ::
                         {valu=RValue.Symbol(name)} ::
                         e :: ex) ->
-            (Use (name, prec e, ((List.map prec) ex)), args.pos)
+            (Use (name, prec e, List.map prec ex), args.pos)
         | RValue.List ({valu=RValue.Symbol("\\")} :: {valu=RValue.List (l)} :: e) ->
-            (Lambda (((List.map getSymbol) l), ((List.map prec) e)), args.pos)
+            (Lambda (((List.map getSymbol) l), if e.Length = 0 then [(Const (RValue.Nil), args.pos)] else (List.map prec e)), args.pos)
         | RValue.List (e :: {valu=RValue.Symbol (name)} :: ex) ->
-            (MethodCall ((prec e, name, ((List.map prec) ex))), args.pos)
+            (MethodCall ((prec e, name, List.map prec ex)), args.pos)
         | _ -> raise (InvalidTopLevelExpr args.pos)
     
     let inline Prec x = prec x

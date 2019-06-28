@@ -260,6 +260,47 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "LParserC/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "FSharp.Core": "4.6.2"
+        },
+        "compile": {
+          "bin/placeholder/LParserC.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LParserC.dll": {}
+        }
+      },
+      "MParser/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "FSharp.Core": "4.6.2",
+          "LParserC": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MParser.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MParser.dll": {}
+        }
+      },
+      "Precompiler/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "FSharp.Core": "4.6.2",
+          "MParser": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Precompiler.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Precompiler.dll": {}
+        }
       }
     }
   },
@@ -780,12 +821,28 @@
         "netstandard.library.nuspec",
         "paket-installmodel.cache"
       ]
+    },
+    "LParserC/1.0.0": {
+      "type": "project",
+      "path": "../LParserC/LParserC/LParserC.fsproj",
+      "msbuildProject": "../LParserC/LParserC/LParserC.fsproj"
+    },
+    "MParser/1.0.0": {
+      "type": "project",
+      "path": "../MParser/MParser.fsproj",
+      "msbuildProject": "../MParser/MParser.fsproj"
+    },
+    "Precompiler/1.0.0": {
+      "type": "project",
+      "path": "../Precompiler/Precompiler.fsproj",
+      "msbuildProject": "../Precompiler/Precompiler.fsproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
       "FSharp.Core >= 4.6.2",
-      "Microsoft.NETCore.App >= 2.2.0"
+      "Microsoft.NETCore.App >= 2.2.0",
+      "Precompiler >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -817,7 +874,11 @@
       },
       "frameworks": {
         "netcoreapp2.2": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\enter\\source\\repos\\FMalt\\Precompiler\\Precompiler.fsproj": {
+              "projectPath": "C:\\Users\\enter\\source\\repos\\FMalt\\Precompiler\\Precompiler.fsproj"
+            }
+          }
         }
       }
     },

@@ -9,4 +9,8 @@
     <Compile Include="Zinc.fs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Precompiler\Precompiler.fsproj" />
+  </ItemGroup>
+
 </Project>

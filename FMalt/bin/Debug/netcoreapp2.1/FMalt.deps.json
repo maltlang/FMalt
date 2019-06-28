@@ -10,6 +10,7 @@
         "dependencies": {
           "CodeGen": "1.0.0",
           "FSharp.Core": "4.6.2",
+          "LParserC": "1.0.0",
           "MParser": "1.0.0",
           "Precompiler": "1.0.0"
         },
