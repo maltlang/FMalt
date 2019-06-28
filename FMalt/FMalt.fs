@@ -39,10 +39,19 @@ let comp1 filepath =
     use ofile = new StreamWriter(filepath + ".mwc")
     ofile.Write(modulebox m)
 
+// 普通的编译器
+let _main argv =
+    argv
+    |> Array.iter (comp1)
+    0
+
+// 改两行就成了并行管线编译器
 [<EntryPoint>]
 let main argv =
     argv
-    |> Array.map (fun x -> new Task(fun _ -> comp1 x))
-    |> Array.map (fun x -> x.Start (); x)
-    |> Array.iter (fun x -> x.Wait ())
+    |> Array.map  (fun x -> new Task (fun _ -> comp1 x))    // 因为我想让workflow启动得更整齐一些
+    |> Array.map  (fun x -> x.Start  (); x)                 // 所以我没有用Task.Run
+    |> Array.iter (fun x -> x.Wait   ())
     0
+
+// F#的快乐！如此简单！

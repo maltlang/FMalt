@@ -1,0 +1,13 @@
+C:\Users\enter\source\repos\FMalt\MaltI\bin\Release\netcoreapp2.2\MaltI.deps.json
+C:\Users\enter\source\repos\FMalt\MaltI\bin\Release\netcoreapp2.2\MaltI.runtimeconfig.json
+C:\Users\enter\source\repos\FMalt\MaltI\bin\Release\netcoreapp2.2\MaltI.runtimeconfig.dev.json
+C:\Users\enter\source\repos\FMalt\MaltI\bin\Release\netcoreapp2.2\MaltI.dll
+C:\Users\enter\source\repos\FMalt\MaltI\bin\Release\netcoreapp2.2\MaltI.pdb
+C:\Users\enter\source\repos\FMalt\MaltI\bin\Release\netcoreapp2.2\Zinc.dll
+C:\Users\enter\source\repos\FMalt\MaltI\bin\Release\netcoreapp2.2\Zinc.pdb
+C:\Users\enter\source\repos\FMalt\MaltI\obj\Release\netcoreapp2.2\MaltI.fsprojAssemblyReference.cache
+C:\Users\enter\source\repos\FMalt\MaltI\obj\Release\netcoreapp2.2\MaltI.AssemblyInfoInputs.cache
+C:\Users\enter\source\repos\FMalt\MaltI\obj\Release\netcoreapp2.2\MaltI.AssemblyInfo.fs
+C:\Users\enter\source\repos\FMalt\MaltI\obj\Release\netcoreapp2.2\MaltI.fsproj.CopyComplete
+C:\Users\enter\source\repos\FMalt\MaltI\obj\Release\netcoreapp2.2\MaltI.dll
+C:\Users\enter\source\repos\FMalt\MaltI\obj\Release\netcoreapp2.2\MaltI.pdb

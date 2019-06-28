@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.489
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "MParser", "MParser\MParser.fsproj", "{06FE85A2-92BC-4787-B85A-E4F20F5D4233}"
 EndProject
@@ -15,7 +15,11 @@ Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Precompiler", "Precompiler\
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Precompiler.Test", "Precompiler.Test\Precompiler.Test.fsproj", "{B8E60BAF-A44E-41F5-88AB-915D756C9F62}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "CodeGen", "CodeGen\CodeGen.fsproj", "{847BF890-22CC-426C-83FB-4170FDC2D887}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "CodeGen", "CodeGen\CodeGen.fsproj", "{847BF890-22CC-426C-83FB-4170FDC2D887}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Zinc", "Zinc\Zinc.fsproj", "{8795293C-D449-40EA-925A-76B41FD67E1B}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MaltI", "MaltI\MaltI.fsproj", "{165C761F-0C1D-4F18-B64B-A3BDCD471FE0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +55,14 @@ Global
 		{847BF890-22CC-426C-83FB-4170FDC2D887}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{847BF890-22CC-426C-83FB-4170FDC2D887}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{847BF890-22CC-426C-83FB-4170FDC2D887}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8795293C-D449-40EA-925A-76B41FD67E1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8795293C-D449-40EA-925A-76B41FD67E1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8795293C-D449-40EA-925A-76B41FD67E1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8795293C-D449-40EA-925A-76B41FD67E1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{165C761F-0C1D-4F18-B64B-A3BDCD471FE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{165C761F-0C1D-4F18-B64B-A3BDCD471FE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{165C761F-0C1D-4F18-B64B-A3BDCD471FE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{165C761F-0C1D-4F18-B64B-A3BDCD471FE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

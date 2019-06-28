@@ -1,0 +1,10 @@
+C:\Users\enter\source\repos\FMalt\Zinc\bin\Release\netcoreapp2.2\Zinc.deps.json
+C:\Users\enter\source\repos\FMalt\Zinc\bin\Release\netcoreapp2.2\Zinc.runtimeconfig.json
+C:\Users\enter\source\repos\FMalt\Zinc\bin\Release\netcoreapp2.2\Zinc.runtimeconfig.dev.json
+C:\Users\enter\source\repos\FMalt\Zinc\bin\Release\netcoreapp2.2\Zinc.dll
+C:\Users\enter\source\repos\FMalt\Zinc\bin\Release\netcoreapp2.2\Zinc.pdb
+C:\Users\enter\source\repos\FMalt\Zinc\obj\Release\netcoreapp2.2\Zinc.fsprojAssemblyReference.cache
+C:\Users\enter\source\repos\FMalt\Zinc\obj\Release\netcoreapp2.2\Zinc.AssemblyInfoInputs.cache
+C:\Users\enter\source\repos\FMalt\Zinc\obj\Release\netcoreapp2.2\Zinc.AssemblyInfo.fs
+C:\Users\enter\source\repos\FMalt\Zinc\obj\Release\netcoreapp2.2\Zinc.dll
+C:\Users\enter\source\repos\FMalt\Zinc\obj\Release\netcoreapp2.2\Zinc.pdb
