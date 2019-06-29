@@ -19,7 +19,6 @@ let modulebox m =
     + lambdabox (! m.global_lambda)
 
 let comp1 filepath =
-    let file = File.OpenText(filepath) 
     let m = {
         path            = filepath;
         global_lambda   = ref ""
